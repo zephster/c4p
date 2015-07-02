@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA7D16081B44D3FD0066B4D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D16071B44D3FD0066B4D1 /* AppDelegate.swift */; };
+		CA7D160A1B44D3FD0066B4D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D16091B44D3FD0066B4D1 /* ViewController.swift */; };
+		CA7D160D1B44D3FD0066B4D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7D160B1B44D3FD0066B4D1 /* Main.storyboard */; };
+		CA7D160F1B44D3FD0066B4D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA7D160E1B44D3FD0066B4D1 /* Images.xcassets */; };
+		CA7D16121B44D3FD0066B4D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7D16101B44D3FD0066B4D1 /* LaunchScreen.xib */; };
+		CA7D161E1B44D3FD0066B4D1 /* Cash4PooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D161D1B44D3FD0066B4D1 /* Cash4PooTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA7D16181B44D3FD0066B4D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA7D15FA1B44D3FD0066B4D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA7D16011B44D3FD0066B4D1;
+			remoteInfo = Cash4Poo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CA7D16021B44D3FD0066B4D1 /* Cash4Poo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cash4Poo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA7D16061B44D3FD0066B4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA7D16071B44D3FD0066B4D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CA7D16091B44D3FD0066B4D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CA7D160C1B44D3FD0066B4D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA7D160E1B44D3FD0066B4D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CA7D16111B44D3FD0066B4D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CA7D16171B44D3FD0066B4D1 /* Cash4PooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cash4PooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA7D161C1B44D3FD0066B4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA7D161D1B44D3FD0066B4D1 /* Cash4PooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash4PooTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA7D15FF1B44D3FD0066B4D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA7D16141B44D3FD0066B4D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA7D15F91B44D3FD0066B4D1 = {
+			isa = PBXGroup;
+			children = (
+				CA7D16041B44D3FD0066B4D1 /* Cash4Poo */,
+				CA7D161A1B44D3FD0066B4D1 /* Cash4PooTests */,
+				CA7D16031B44D3FD0066B4D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA7D16031B44D3FD0066B4D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA7D16021B44D3FD0066B4D1 /* Cash4Poo.app */,
+				CA7D16171B44D3FD0066B4D1 /* Cash4PooTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA7D16041B44D3FD0066B4D1 /* Cash4Poo */ = {
+			isa = PBXGroup;
+			children = (
+				CA7D16071B44D3FD0066B4D1 /* AppDelegate.swift */,
+				CA7D16091B44D3FD0066B4D1 /* ViewController.swift */,
+				CA7D160B1B44D3FD0066B4D1 /* Main.storyboard */,
+				CA7D160E1B44D3FD0066B4D1 /* Images.xcassets */,
+				CA7D16101B44D3FD0066B4D1 /* LaunchScreen.xib */,
+				CA7D16051B44D3FD0066B4D1 /* Supporting Files */,
+			);
+			path = Cash4Poo;
+			sourceTree = "<group>";
+		};
+		CA7D16051B44D3FD0066B4D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA7D16061B44D3FD0066B4D1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CA7D161A1B44D3FD0066B4D1 /* Cash4PooTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA7D161D1B44D3FD0066B4D1 /* Cash4PooTests.swift */,
+				CA7D161B1B44D3FD0066B4D1 /* Supporting Files */,
+			);
+			path = Cash4PooTests;
+			sourceTree = "<group>";
+		};
+		CA7D161B1B44D3FD0066B4D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA7D161C1B44D3FD0066B4D1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA7D16011B44D3FD0066B4D1 /* Cash4Poo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA7D16211B44D3FD0066B4D1 /* Build configuration list for PBXNativeTarget "Cash4Poo" */;
+			buildPhases = (
+				CA7D15FE1B44D3FD0066B4D1 /* Sources */,
+				CA7D15FF1B44D3FD0066B4D1 /* Frameworks */,
+				CA7D16001B44D3FD0066B4D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cash4Poo;
+			productName = Cash4Poo;
+			productReference = CA7D16021B44D3FD0066B4D1 /* Cash4Poo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA7D16161B44D3FD0066B4D1 /* Cash4PooTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA7D16241B44D3FD0066B4D1 /* Build configuration list for PBXNativeTarget "Cash4PooTests" */;
+			buildPhases = (
+				CA7D16131B44D3FD0066B4D1 /* Sources */,
+				CA7D16141B44D3FD0066B4D1 /* Frameworks */,
+				CA7D16151B44D3FD0066B4D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA7D16191B44D3FD0066B4D1 /* PBXTargetDependency */,
+			);
+			name = Cash4PooTests;
+			productName = Cash4PooTests;
+			productReference = CA7D16171B44D3FD0066B4D1 /* Cash4PooTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA7D15FA1B44D3FD0066B4D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = cbcoding;
+				TargetAttributes = {
+					CA7D16011B44D3FD0066B4D1 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					CA7D16161B44D3FD0066B4D1 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = CA7D16011B44D3FD0066B4D1;
+					};
+				};
+			};
+			buildConfigurationList = CA7D15FD1B44D3FD0066B4D1 /* Build configuration list for PBXProject "Cash4Poo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA7D15F91B44D3FD0066B4D1;
+			productRefGroup = CA7D16031B44D3FD0066B4D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA7D16011B44D3FD0066B4D1 /* Cash4Poo */,
+				CA7D16161B44D3FD0066B4D1 /* Cash4PooTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA7D16001B44D3FD0066B4D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA7D160D1B44D3FD0066B4D1 /* Main.storyboard in Resources */,
+				CA7D16121B44D3FD0066B4D1 /* LaunchScreen.xib in Resources */,
+				CA7D160F1B44D3FD0066B4D1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA7D16151B44D3FD0066B4D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA7D15FE1B44D3FD0066B4D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA7D160A1B44D3FD0066B4D1 /* ViewController.swift in Sources */,
+				CA7D16081B44D3FD0066B4D1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA7D16131B44D3FD0066B4D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA7D161E1B44D3FD0066B4D1 /* Cash4PooTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA7D16191B44D3FD0066B4D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA7D16011B44D3FD0066B4D1 /* Cash4Poo */;
+			targetProxy = CA7D16181B44D3FD0066B4D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CA7D160B1B44D3FD0066B4D1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA7D160C1B44D3FD0066B4D1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CA7D16101B44D3FD0066B4D1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA7D16111B44D3FD0066B4D1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA7D161F1B44D3FD0066B4D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA7D16201B44D3FD0066B4D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA7D16221B44D3FD0066B4D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Cash4Poo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CA7D16231B44D3FD0066B4D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Cash4Poo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CA7D16251B44D3FD0066B4D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Cash4PooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cash4Poo.app/Cash4Poo";
+			};
+			name = Debug;
+		};
+		CA7D16261B44D3FD0066B4D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Cash4PooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cash4Poo.app/Cash4Poo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA7D15FD1B44D3FD0066B4D1 /* Build configuration list for PBXProject "Cash4Poo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA7D161F1B44D3FD0066B4D1 /* Debug */,
+				CA7D16201B44D3FD0066B4D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA7D16211B44D3FD0066B4D1 /* Build configuration list for PBXNativeTarget "Cash4Poo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA7D16221B44D3FD0066B4D1 /* Debug */,
+				CA7D16231B44D3FD0066B4D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CA7D16241B44D3FD0066B4D1 /* Build configuration list for PBXNativeTarget "Cash4PooTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA7D16251B44D3FD0066B4D1 /* Debug */,
+				CA7D16261B44D3FD0066B4D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA7D15FA1B44D3FD0066B4D1 /* Project object */;
+}

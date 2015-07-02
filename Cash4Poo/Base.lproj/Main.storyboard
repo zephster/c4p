@@ -49,13 +49,32 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Wla-3w-oJV" secondAttribute="centerX" id="1WV-jL-3Yp"/>
                             <constraint firstAttribute="centerX" secondItem="RxQ-um-KYi" secondAttribute="centerX" id="5Vm-lJ-zfn"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9GM-g9-x1Y" secondAttribute="bottom" constant="102" id="CoZ-BP-wK9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9GM-g9-x1Y" secondAttribute="bottom" constant="102" id="CoZ-BP-wK9">
+                                <variation key="heightClass=compact" constant="52"/>
+                            </constraint>
                             <constraint firstItem="RxQ-um-KYi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Sq5-NR-HAS"/>
-                            <constraint firstItem="9GM-g9-x1Y" firstAttribute="top" secondItem="Vyd-Fl-6Xl" secondAttribute="bottom" constant="29" id="W25-it-pNe"/>
-                            <constraint firstAttribute="centerX" secondItem="Vyd-Fl-6Xl" secondAttribute="centerX" id="YkS-Xt-koQ"/>
-                            <constraint firstAttribute="centerX" secondItem="9GM-g9-x1Y" secondAttribute="centerX" id="keS-1a-AnY"/>
-                            <constraint firstItem="Wla-3w-oJV" firstAttribute="top" secondItem="RxQ-um-KYi" secondAttribute="bottom" constant="100" id="vtL-Gw-LGZ"/>
+                            <constraint firstItem="9GM-g9-x1Y" firstAttribute="top" secondItem="Vyd-Fl-6Xl" secondAttribute="bottom" constant="29" id="W25-it-pNe">
+                                <variation key="heightClass=compact" constant="-60"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="Vyd-Fl-6Xl" secondAttribute="centerX" id="YkS-Xt-koQ">
+                                <variation key="heightClass=compact" constant="53"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="9GM-g9-x1Y" secondAttribute="centerX" id="keS-1a-AnY">
+                                <variation key="heightClass=compact" constant="-53"/>
+                            </constraint>
+                            <constraint firstItem="Wla-3w-oJV" firstAttribute="top" secondItem="RxQ-um-KYi" secondAttribute="bottom" constant="100" id="vtL-Gw-LGZ">
+                                <variation key="heightClass=compact" constant="45"/>
+                            </constraint>
                         </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="vtL-Gw-LGZ"/>
+                                <include reference="YkS-Xt-koQ"/>
+                                <include reference="W25-it-pNe"/>
+                                <include reference="keS-1a-AnY"/>
+                                <include reference="CoZ-BP-wK9"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

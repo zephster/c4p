@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--💰4💩-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="💰4💩" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Cash4Poo_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="108" alignment="left" layout="vertical" id="DrQ-NK-irI">
+                            <items>
+                                <label alignment="left" text="Elapsed Time" id="fpx-Ld-IGY"/>
+                                <timer alignment="center" id="79g-9Z-wq3"/>
+                                <label alignment="left" text="Gross (lol) Profit" id="3Mn-bx-Vpc"/>
+                                <label alignment="center" text="$13.37" id="tqE-s4-xl9">
+                                    <color key="textColor" red="0.14322025340625244" green="1" blue="0.017359335829717937" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="7" bottom="0.0"/>
+                        </group>
+                        <group alignment="left" verticalAlignment="bottom" id="Kk4-EP-yTX">
+                            <items>
+                                <button width="0.50000000000000011" alignment="center" title="Stop" id="33J-uf-tB1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.52680638227513232" green="0.066758882029247124" blue="0.030856650092249478" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                </button>
+                                <button width="0.50000000000000011" alignment="left" title="Start" id="0Uj-Sr-iUt">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.0011030352818218966" green="0.52680638227513232" blue="0.016519111441057926" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="164" y="217"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="rjY-Ar-IMT">
+            <objects>
+                <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="Cash4Poo_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="gv7-I2-MZq">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="You have made" textAlignment="center" id="4gg-CD-efp"/>
+                            </items>
+                        </group>
+                        <group alignment="left" layout="vertical" id="eew-Gs-W6Y">
+                            <items>
+                                <label alignment="left" text="$13.37" id="sWW-Dy-kQd">
+                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <label alignment="left" text="Making poopy." id="Zx9-cY-tRd"/>
+                                <label alignment="left" text="AWESOME!" id="0pG-O8-mZv"/>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="164" y="514"/>
+        </scene>
+    </scenes>
+</document>

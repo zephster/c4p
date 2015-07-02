@@ -13,6 +13,13 @@
 		CA7D160F1B44D3FD0066B4D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA7D160E1B44D3FD0066B4D1 /* Images.xcassets */; };
 		CA7D16121B44D3FD0066B4D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7D16101B44D3FD0066B4D1 /* LaunchScreen.xib */; };
 		CA7D161E1B44D3FD0066B4D1 /* Cash4PooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D161D1B44D3FD0066B4D1 /* Cash4PooTests.swift */; };
+		CAEDE5761B44DC9900682F0B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEDE5751B44DC9900682F0B /* InterfaceController.swift */; };
+		CAEDE5781B44DC9900682F0B /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEDE5771B44DC9900682F0B /* GlanceController.swift */; };
+		CAEDE57A1B44DC9900682F0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAEDE5791B44DC9900682F0B /* Images.xcassets */; };
+		CAEDE57E1B44DC9A00682F0B /* Cash4Poo WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = CAEDE57D1B44DC9A00682F0B /* Cash4Poo WatchKit App.app */; };
+		CAEDE5861B44DC9A00682F0B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEDE5841B44DC9A00682F0B /* Interface.storyboard */; };
+		CAEDE5881B44DC9A00682F0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAEDE5871B44DC9A00682F0B /* Images.xcassets */; };
+		CAEDE58B1B44DC9A00682F0B /* Cash4Poo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CAEDE5711B44DC9900682F0B /* Cash4Poo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +30,35 @@
 			remoteGlobalIDString = CA7D16011B44D3FD0066B4D1;
 			remoteInfo = Cash4Poo;
 		};
+		CAEDE57F1B44DC9A00682F0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA7D15FA1B44D3FD0066B4D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAEDE57C1B44DC9A00682F0B;
+			remoteInfo = "Cash4Poo WatchKit App";
+		};
+		CAEDE5891B44DC9A00682F0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA7D15FA1B44D3FD0066B4D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAEDE5701B44DC9900682F0B;
+			remoteInfo = "Cash4Poo WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CAEDE5921B44DC9A00682F0B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CAEDE58B1B44DC9A00682F0B /* Cash4Poo WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CA7D16021B44D3FD0066B4D1 /* Cash4Poo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cash4Poo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +71,15 @@
 		CA7D16171B44D3FD0066B4D1 /* Cash4PooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cash4PooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7D161C1B44D3FD0066B4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA7D161D1B44D3FD0066B4D1 /* Cash4PooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash4PooTests.swift; sourceTree = "<group>"; };
+		CAEDE5711B44DC9900682F0B /* Cash4Poo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Cash4Poo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAEDE5741B44DC9900682F0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAEDE5751B44DC9900682F0B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		CAEDE5771B44DC9900682F0B /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		CAEDE5791B44DC9900682F0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CAEDE57D1B44DC9A00682F0B /* Cash4Poo WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash4Poo WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAEDE5831B44DC9A00682F0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAEDE5851B44DC9A00682F0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		CAEDE5871B44DC9A00682F0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +97,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CAEDE56E1B44DC9900682F0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +112,8 @@
 			children = (
 				CA7D16041B44D3FD0066B4D1 /* Cash4Poo */,
 				CA7D161A1B44D3FD0066B4D1 /* Cash4PooTests */,
+				CAEDE5721B44DC9900682F0B /* Cash4Poo WatchKit Extension */,
+				CAEDE5811B44DC9A00682F0B /* Cash4Poo WatchKit App */,
 				CA7D16031B44D3FD0066B4D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +123,8 @@
 			children = (
 				CA7D16021B44D3FD0066B4D1 /* Cash4Poo.app */,
 				CA7D16171B44D3FD0066B4D1 /* Cash4PooTests.xctest */,
+				CAEDE5711B44DC9900682F0B /* Cash4Poo WatchKit Extension.appex */,
+				CAEDE57D1B44DC9A00682F0B /* Cash4Poo WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +167,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CAEDE5721B44DC9900682F0B /* Cash4Poo WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CAEDE5751B44DC9900682F0B /* InterfaceController.swift */,
+				CAEDE5771B44DC9900682F0B /* GlanceController.swift */,
+				CAEDE5791B44DC9900682F0B /* Images.xcassets */,
+				CAEDE5731B44DC9900682F0B /* Supporting Files */,
+			);
+			path = "Cash4Poo WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		CAEDE5731B44DC9900682F0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CAEDE5741B44DC9900682F0B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CAEDE5811B44DC9A00682F0B /* Cash4Poo WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				CAEDE5841B44DC9A00682F0B /* Interface.storyboard */,
+				CAEDE5871B44DC9A00682F0B /* Images.xcassets */,
+				CAEDE5821B44DC9A00682F0B /* Supporting Files */,
+			);
+			path = "Cash4Poo WatchKit App";
+			sourceTree = "<group>";
+		};
+		CAEDE5821B44DC9A00682F0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CAEDE5831B44DC9A00682F0B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +214,12 @@
 				CA7D15FE1B44D3FD0066B4D1 /* Sources */,
 				CA7D15FF1B44D3FD0066B4D1 /* Frameworks */,
 				CA7D16001B44D3FD0066B4D1 /* Resources */,
+				CAEDE5921B44DC9A00682F0B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CAEDE58A1B44DC9A00682F0B /* PBXTargetDependency */,
 			);
 			name = Cash4Poo;
 			productName = Cash4Poo;
@@ -150,6 +244,39 @@
 			productReference = CA7D16171B44D3FD0066B4D1 /* Cash4PooTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CAEDE5701B44DC9900682F0B /* Cash4Poo WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAEDE5911B44DC9A00682F0B /* Build configuration list for PBXNativeTarget "Cash4Poo WatchKit Extension" */;
+			buildPhases = (
+				CAEDE56D1B44DC9900682F0B /* Sources */,
+				CAEDE56E1B44DC9900682F0B /* Frameworks */,
+				CAEDE56F1B44DC9900682F0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAEDE5801B44DC9A00682F0B /* PBXTargetDependency */,
+			);
+			name = "Cash4Poo WatchKit Extension";
+			productName = "Cash4Poo WatchKit Extension";
+			productReference = CAEDE5711B44DC9900682F0B /* Cash4Poo WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		CAEDE57C1B44DC9A00682F0B /* Cash4Poo WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAEDE5901B44DC9A00682F0B /* Build configuration list for PBXNativeTarget "Cash4Poo WatchKit App" */;
+			buildPhases = (
+				CAEDE57B1B44DC9A00682F0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cash4Poo WatchKit App";
+			productName = "Cash4Poo WatchKit App";
+			productReference = CAEDE57D1B44DC9A00682F0B /* Cash4Poo WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +292,12 @@
 					CA7D16161B44D3FD0066B4D1 = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = CA7D16011B44D3FD0066B4D1;
+					};
+					CAEDE5701B44DC9900682F0B = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					CAEDE57C1B44DC9A00682F0B = {
+						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
@@ -183,6 +316,8 @@
 			targets = (
 				CA7D16011B44D3FD0066B4D1 /* Cash4Poo */,
 				CA7D16161B44D3FD0066B4D1 /* Cash4PooTests */,
+				CAEDE5701B44DC9900682F0B /* Cash4Poo WatchKit Extension */,
+				CAEDE57C1B44DC9A00682F0B /* Cash4Poo WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +337,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAEDE56F1B44DC9900682F0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAEDE57A1B44DC9900682F0B /* Images.xcassets in Resources */,
+				CAEDE57E1B44DC9A00682F0B /* Cash4Poo WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAEDE57B1B44DC9A00682F0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAEDE5861B44DC9A00682F0B /* Interface.storyboard in Resources */,
+				CAEDE5881B44DC9A00682F0B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +378,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CAEDE56D1B44DC9900682F0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAEDE5761B44DC9900682F0B /* InterfaceController.swift in Sources */,
+				CAEDE5781B44DC9900682F0B /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -232,6 +394,16 @@
 			isa = PBXTargetDependency;
 			target = CA7D16011B44D3FD0066B4D1 /* Cash4Poo */;
 			targetProxy = CA7D16181B44D3FD0066B4D1 /* PBXContainerItemProxy */;
+		};
+		CAEDE5801B44DC9A00682F0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAEDE57C1B44DC9A00682F0B /* Cash4Poo WatchKit App */;
+			targetProxy = CAEDE57F1B44DC9A00682F0B /* PBXContainerItemProxy */;
+		};
+		CAEDE58A1B44DC9A00682F0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAEDE5701B44DC9900682F0B /* Cash4Poo WatchKit Extension */;
+			targetProxy = CAEDE5891B44DC9A00682F0B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -250,6 +422,14 @@
 				CA7D16111B44D3FD0066B4D1 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		CAEDE5841B44DC9A00682F0B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAEDE5851B44DC9A00682F0B /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -392,6 +572,62 @@
 			};
 			name = Release;
 		};
+		CAEDE58C1B44DC9A00682F0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Cash4Poo WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CAEDE58D1B44DC9A00682F0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Cash4Poo WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CAEDE58E1B44DC9A00682F0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Cash4Poo_WatchKit_Extension;
+				INFOPLIST_FILE = "Cash4Poo WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		CAEDE58F1B44DC9A00682F0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Cash4Poo_WatchKit_Extension;
+				INFOPLIST_FILE = "Cash4Poo WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -411,12 +647,30 @@
 				CA7D16231B44D3FD0066B4D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA7D16241B44D3FD0066B4D1 /* Build configuration list for PBXNativeTarget "Cash4PooTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA7D16251B44D3FD0066B4D1 /* Debug */,
 				CA7D16261B44D3FD0066B4D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAEDE5901B44DC9A00682F0B /* Build configuration list for PBXNativeTarget "Cash4Poo WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAEDE58E1B44DC9A00682F0B /* Debug */,
+				CAEDE58F1B44DC9A00682F0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CAEDE5911B44DC9A00682F0B /* Build configuration list for PBXNativeTarget "Cash4Poo WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAEDE58C1B44DC9A00682F0B /* Debug */,
+				CAEDE58D1B44DC9A00682F0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

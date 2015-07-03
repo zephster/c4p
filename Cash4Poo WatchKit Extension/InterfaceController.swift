@@ -7,7 +7,76 @@
 //
 
 import WatchKit
-import Foundation
+
+class PooWatch : NSObject
+{
+    private var label:WKInterfaceLabel
+    private var timer: NSTimer?
+    private var startTime: NSDate?
+    
+    init(stopwatch_label: WKInterfaceLabel)
+    {
+        self.label = stopwatch_label
+    }
+    
+    var elapsedTime: NSTimeInterval {
+        get {
+            return NSDate().timeIntervalSinceDate(self.startTime ?? NSDate())
+        }
+    }
+    
+    var elapsedTimeString: String {
+        get {
+            return self.timeIntervalToString(self.elapsedTime) ?? "00:00:00"
+        }
+    }
+    
+    private func timeIntervalToString(interval: NSTimeInterval) -> String?
+    {
+        let dcf = NSDateComponentsFormatter()
+        dcf.zeroFormattingBehavior = .Pad
+        dcf.allowedUnits = (.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond)
+        
+        return dcf.stringFromTimeInterval(interval)
+    }
+    
+    func start()
+    {
+        self.reset()
+        
+        if (self.timer?.valid != true)
+        {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(
+                1.0,
+                target: self,
+                selector: "updatePoopUI",
+                userInfo: nil,
+                repeats: true
+            )
+        }
+    }
+    
+    func updatePoopUI()
+    {
+        self.label.setText(self.elapsedTimeString)
+    }
+    
+    func stop()
+    {
+        self.timer?.invalidate()
+    }
+    
+    func reset()
+    {
+        // reset timer
+        self.timer = nil
+        
+        // reset startTime to 0:00:00
+        self.startTime = NSDate()
+        
+        updatePoopUI()
+    }
+}
 
 
 class InterfaceController: WKInterfaceController {
@@ -15,12 +84,47 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var btnStart: WKInterfaceButton!
     @IBOutlet weak var btnStop: WKInterfaceButton!
     
-    var timer = NSTimer()
-    var startTime = NSTimeInterval()
+    var pooWatch: PooWatch?
+    var stopShouldReset:Bool = false
+
+    @IBAction func startPooping()
+    {
+        self.btnStart.setEnabled(false)
+        self.btnStop.setEnabled(true)
+        
+        if (self.pooWatch == nil)
+        {
+            self.pooWatch = PooWatch(stopwatch_label: self.lblStopwatch)
+        }
+        
+        self.pooWatch!.start()
+    }
+
+    @IBAction func stopPooping()
+    {
+        self.pooWatch!.stop()
+        self.btnStart.setEnabled(true)
+        
+        if (self.stopShouldReset == false)
+        {
+            self.stopShouldReset = true
+            self.btnStop.setTitle("Reset")
+        }
+        else
+        {
+            self.pooWatch!.reset()
+            self.stopShouldReset = false
+            self.btnStop.setEnabled(false)
+            self.btnStop.setTitle("Stop")
+        }
+    }
+
+
+
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
+
         // Configure interface objects here.
     }
 
@@ -33,67 +137,4 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
-    @IBAction func startPooping()
-    {
-        print("tapped start button in watch app\n")
-        
-        // start if timer is stopped
-        if (!self.timer.valid)
-        {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(
-                0.1,
-                target: self,
-                selector: "poopTick",
-                userInfo: nil,
-                repeats: true
-            )
-            
-            self.startTime = NSDate.timeIntervalSinceReferenceDate()
-            
-            self.btnStart.setEnabled(false)
-        }
-    }
-    
-    
-    @IBAction func stopPooping()
-    {
-        print("tapped stop button in watch app\n")
-        self.timer.invalidate()
-        self.btnStart.setEnabled(true)
-    }
-    
-    func poopTick()
-    {
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
-        
-        //Find the difference between current time and start time.
-        
-        var elapsedTime = currentTime - self.startTime
-        
-        //calculate the minutes in elapsed time.
-        
-        let minutes = UInt8(elapsedTime / 60.0)
-        
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
-        
-        //calculate the seconds in elapsed time.
-        
-        let seconds = UInt8(elapsedTime)
-        
-        elapsedTime -= NSTimeInterval(seconds)
-        
-        //find out the fraction of milliseconds to be displayed.
-        
-        let fraction = UInt8(elapsedTime * 100)
-        
-        //add the leading zero for minutes, seconds and millseconds and store them as string constants
-        
-        let strMinutes = String(format: "%02d", minutes)
-        let strSeconds = String(format: "%02d", seconds)
-        let strFraction = String(format: "%02d", fraction)
-        
-        self.lblStopwatch.setText("\(strMinutes):\(strSeconds):\(strFraction)")
-    }
-
 }

@@ -13,7 +13,7 @@
                         <group width="1" height="108" alignment="left" layout="vertical" id="DrQ-NK-irI">
                             <items>
                                 <label alignment="left" text="Elapsed Time" id="fpx-Ld-IGY"/>
-                                <label alignment="center" text="00:00:00" id="JhJ-Ki-msq">
+                                <label alignment="center" text="0:00:00" id="JhJ-Ki-msq">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                                 <label alignment="left" text="Gross (lol) Profit" id="3Mn-bx-Vpc"/>
@@ -25,7 +25,7 @@
                         </group>
                         <group alignment="left" verticalAlignment="bottom" id="Kk4-EP-yTX">
                             <items>
-                                <button width="0.50000000000000011" alignment="center" title="Stop" id="33J-uf-tB1">
+                                <button width="0.50000000000000011" alignment="center" title="Stop" enabled="NO" id="33J-uf-tB1">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" red="0.52680638227513232" green="0.066758882029247124" blue="0.030856650092249478" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="20"/>

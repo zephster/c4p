@@ -54,7 +54,7 @@ public struct StopWatch {
 
 
 
-class ViewController: UIViewController {
+class PooWatchViewController: UIViewController {
     @IBOutlet weak var lblStopwatch: UILabel!
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var btnStop: UIButton!
@@ -63,6 +63,7 @@ class ViewController: UIViewController {
     
     var stopWatch: StopWatch = StopWatch()
     var timer: NSTimer?
+    var stopShouldReset: Bool = false
 
 
     override func viewDidLoad() {
@@ -86,9 +87,8 @@ class ViewController: UIViewController {
     @IBAction func startPooping(sender: UIButton)
     {
         print("tapped start button in main app\n")
-        
-        if (self.timer?.valid == nil ||
-            self.timer?.valid == false)
+
+        if (self.timer?.valid != true)
         {
             self.timer = NSTimer.scheduledTimerWithTimeInterval(
                 0.10,
@@ -111,11 +111,15 @@ class ViewController: UIViewController {
         self.timer?.invalidate()
         self.btnStart.enabled = true
         
-        if (self.timer?.valid == nil ||
-            self.timer?.valid == false)
+        if (self.stopShouldReset == false)
         {
-            print("reset poopwatch")
+            self.stopShouldReset = true
+        }
+        else
+        {
             self.stopWatch.reset()
+            self.stopShouldReset = false
+            self.btnStop.enabled = false
             updatePoopUI()
         }
     }

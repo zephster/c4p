@@ -91,7 +91,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379.5" y="1094"/>
+            <point key="canvasLocation" x="367.5" y="854"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="8kN-qe-3ow">
+            <objects>
+                <viewController id="vSC-mf-7tp" customClass="SettingsViewController" customModule="Cash4Poo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pOy-SG-yt5"/>
+                        <viewControllerLayoutGuide type="bottom" id="cen-bt-KlC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LDC-KP-ExL">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.5267857142857143" green="0.3224550822154223" blue="0.22922988834129082" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="hGG-3r-qnx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ne1-De-oGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367.5" y="1574"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e5J-EK-Tlm">
@@ -105,6 +123,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Cem-rQ-FJD"/>
+                        <segue destination="vSC-mf-7tp" kind="relationship" relationship="viewControllers" id="eWx-Sv-uBX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpZ-f0-fzg" userLabel="First Responder" sceneMemberID="firstResponder"/>

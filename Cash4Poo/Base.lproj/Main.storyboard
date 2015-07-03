@@ -22,13 +22,16 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GM-g9-x1Y">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GM-g9-x1Y">
                                 <rect key="frame" x="258" y="438" width="84" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleColor" red="1" green="0.35587064812803548" blue="0.28861735018185342" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="stopPooping:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ji-H7-UYs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-3w-oJV">
                                 <rect key="frame" x="205" y="196" width="190" height="60"/>
@@ -43,6 +46,9 @@
                                     <color key="titleColor" red="0.33144238101562029" green="1" blue="0.11102126534426171" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startPooping:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9tJ-rZ-oCl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.5267857142857143" green="0.3224550822154223" blue="0.22922988834129082" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,6 +82,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="btnStart" destination="Vyd-Fl-6Xl" id="bM9-JT-YFd"/>
+                        <outlet property="btnStop" destination="9GM-g9-x1Y" id="qti-hb-SA9"/>
+                        <outlet property="lblStopwatch" destination="Wla-3w-oJV" id="cfx-4Z-oDy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

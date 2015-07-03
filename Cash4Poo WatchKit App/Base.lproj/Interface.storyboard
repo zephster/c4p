@@ -13,7 +13,9 @@
                         <group width="1" height="108" alignment="left" layout="vertical" id="DrQ-NK-irI">
                             <items>
                                 <label alignment="left" text="Elapsed Time" id="fpx-Ld-IGY"/>
-                                <timer alignment="center" id="79g-9Z-wq3"/>
+                                <label alignment="center" text="00:00:00" id="JhJ-Ki-msq">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
                                 <label alignment="left" text="Gross (lol) Profit" id="3Mn-bx-Vpc"/>
                                 <label alignment="center" text="$13.37" id="tqE-s4-xl9">
                                     <color key="textColor" red="0.14322025340625244" green="1" blue="0.017359335829717937" alpha="1" colorSpace="calibratedRGB"/>
@@ -27,15 +29,26 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" red="0.52680638227513232" green="0.066758882029247124" blue="0.030856650092249478" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="20"/>
+                                    <connections>
+                                        <action selector="stopPooping" destination="AgC-eL-Hgc" id="APw-83-Azw"/>
+                                    </connections>
                                 </button>
                                 <button width="0.50000000000000011" alignment="left" title="Start" id="0Uj-Sr-iUt">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" red="0.0011030352818218966" green="0.52680638227513232" blue="0.016519111441057926" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="20"/>
+                                    <connections>
+                                        <action selector="startPooping" destination="AgC-eL-Hgc" id="8Ch-JB-j18"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="btnStart" destination="0Uj-Sr-iUt" id="7e8-z6-IqS"/>
+                        <outlet property="btnStop" destination="33J-uf-tB1" id="sIR-hZ-sCD"/>
+                        <outlet property="lblStopwatch" destination="JhJ-Ki-msq" id="dEJ-JP-PDr"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="164" y="217"/>

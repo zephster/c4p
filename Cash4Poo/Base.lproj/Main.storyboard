@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SmM-Z3-HI8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vSC-mf-7tp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--PooWatch-->
@@ -33,7 +34,7 @@
                                     <action selector="stopPooping:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ji-H7-UYs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-3w-oJV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-3w-oJV">
                                 <rect key="frame" x="205" y="196" width="190" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -102,14 +103,83 @@
                         <viewControllerLayoutGuide type="bottom" id="cen-bt-KlC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LDC-KP-ExL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annual Salary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1h7-2I-gbf">
+                                <rect key="frame" x="247" y="150" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ETg-zk-q76">
+                                <rect key="frame" x="224" y="191" width="153" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLU-sz-Z02">
+                                <rect key="frame" x="262" y="30" width="77" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="277" y="49" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="saveSettings:" destination="vSC-mf-7tp" eventType="touchUpInside" id="Fke-N9-0XQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.5267857142857143" green="0.3224550822154223" blue="0.22922988834129082" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ETg-zk-q76" firstAttribute="leading" secondItem="LDC-KP-ExL" secondAttribute="leadingMargin" constant="208" id="Mbq-JP-l27">
+                                <variation key="widthClass=compact" constant="105"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="ETg-zk-q76" secondAttribute="trailing" constant="207" id="RcL-lu-JVP">
+                                <variation key="widthClass=compact" constant="104"/>
+                            </constraint>
+                            <constraint firstItem="ETg-zk-q76" firstAttribute="top" secondItem="1h7-2I-gbf" secondAttribute="bottom" constant="20" id="UNc-T5-wqV">
+                                <variation key="widthClass=compact" constant="21"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="eLU-sz-Z02" secondAttribute="centerX" id="VT0-2I-T3w"/>
+                            <constraint firstItem="1h7-2I-gbf" firstAttribute="top" secondItem="pOy-SG-yt5" secondAttribute="bottom" constant="130" id="Z7f-H5-0cP"/>
+                            <constraint firstAttribute="centerX" secondItem="1h7-2I-gbf" secondAttribute="centerX" id="nMF-Qv-Dv7"/>
+                            <constraint firstItem="cen-bt-KlC" firstAttribute="top" secondItem="eLU-sz-Z02" secondAttribute="bottom" constant="467" id="w5j-si-wAo">
+                                <variation key="heightClass=compact" constant="272"/>
+                                <variation key="widthClass=compact" constant="451"/>
+                            </constraint>
+                            <constraint firstItem="1h7-2I-gbf" firstAttribute="top" secondItem="eLU-sz-Z02" secondAttribute="bottom" constant="66" id="yTi-fw-Qly">
+                                <variation key="widthClass=compact" constant="50"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yTi-fw-Qly"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="w5j-si-wAo"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="yTi-fw-Qly"/>
+                                <include reference="Mbq-JP-l27"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="hGG-3r-qnx"/>
+                    <connections>
+                        <outlet property="btnSave" destination="eLU-sz-Z02" id="Zbs-oY-x7a"/>
+                        <outlet property="txtAnnualSalary" destination="ETg-zk-q76" id="Xwd-U0-Zus"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ne1-De-oGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367.5" y="1574"/>
+            <point key="canvasLocation" x="366" y="1574"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e5J-EK-Tlm">

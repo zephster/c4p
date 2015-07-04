@@ -27,6 +27,7 @@ class PooWatch : NSObject
     
     var elapsedTimeString: String {
         get {
+            println(self.elapsedTime)
             return self.timeIntervalToString(self.elapsedTime) ?? "00:00:00"
         }
     }

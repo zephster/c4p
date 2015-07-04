@@ -10,7 +10,7 @@
             <objects>
                 <controller title="💰4💩" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Cash4Poo_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" height="108" alignment="left" layout="vertical" id="DrQ-NK-irI">
+                        <group width="1" height="107" alignment="left" layout="vertical" id="DrQ-NK-irI">
                             <items>
                                 <label alignment="left" text="Elapsed Time" id="fpx-Ld-IGY"/>
                                 <label alignment="center" text="0:00:00" id="JhJ-Ki-msq">
@@ -21,9 +21,12 @@
                                     <color key="textColor" red="0.14322025340625244" green="1" blue="0.017359335829717937" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                             </items>
-                            <edgeInsets key="margins" left="0.0" right="0.0" top="7" bottom="0.0"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="10" bottom="0.0"/>
+                            <variation key="device=watch42mm" height="130">
+                                <edgeInsets key="margins" left="0.0" right="0.0" top="20" bottom="0.0"/>
+                            </variation>
                         </group>
-                        <group alignment="left" verticalAlignment="bottom" id="Kk4-EP-yTX">
+                        <group width="1" height="39" alignment="left" id="Bdi-qt-hK6">
                             <items>
                                 <button width="0.50000000000000011" alignment="center" title="Stop" enabled="NO" id="33J-uf-tB1">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,7 +46,25 @@
                                 </button>
                             </items>
                         </group>
+                        <group width="1" height="145" alignment="left" verticalAlignment="bottom" id="Kk4-EP-yTX">
+                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <variation key="device=watch42mm" height="170"/>
+                        </group>
                     </items>
+                    <menu key="menu" id="cMy-q1-0lA">
+                        <items>
+                            <menuItem title="Set Annual Salary" icon="add" id="2ge-jQ-FgT">
+                                <connections>
+                                    <action selector="setAnnualSalary" destination="AgC-eL-Hgc" id="9eZ-JJ-JUQ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Set Work Hours" icon="add" id="JYX-60-jMb">
+                                <connections>
+                                    <action selector="setWorkHours" destination="AgC-eL-Hgc" id="nVD-4L-iHq"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="btnStart" destination="0Uj-Sr-iUt" id="7e8-z6-IqS"/>
                         <outlet property="btnStop" destination="33J-uf-tB1" id="sIR-hZ-sCD"/>
@@ -51,7 +72,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="164" y="217"/>
+            <point key="canvasLocation" x="163.89743589743591" y="280.71794871794873"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">
@@ -76,7 +97,7 @@
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="164" y="514"/>
+            <point key="canvasLocation" x="164" y="793"/>
         </scene>
     </scenes>
 </document>

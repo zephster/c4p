@@ -120,7 +120,15 @@ class InterfaceController: WKInterfaceController {
     }
 
 
+    @IBAction func setAnnualSalary()
+    {
+        println("setAnnualSalary - bring up picker")
+    }
 
+    @IBAction func setWorkHours()
+    {
+        println("setWorkHours - bring up picker")
+    }
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)

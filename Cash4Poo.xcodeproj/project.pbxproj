@@ -13,7 +13,8 @@
 		CA7D160D1B44D3FD0066B4D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7D160B1B44D3FD0066B4D1 /* Main.storyboard */; };
 		CA7D160F1B44D3FD0066B4D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA7D160E1B44D3FD0066B4D1 /* Images.xcassets */; };
 		CA7D161E1B44D3FD0066B4D1 /* Cash4PooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D161D1B44D3FD0066B4D1 /* Cash4PooTests.swift */; };
-		CAEDE5761B44DC9900682F0B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEDE5751B44DC9900682F0B /* InterfaceController.swift */; };
+		CAAEE74B1B483C0300B524E5 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAEE74A1B483C0300B524E5 /* SettingController.swift */; };
+		CAEDE5761B44DC9900682F0B /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEDE5751B44DC9900682F0B /* MainController.swift */; };
 		CAEDE5781B44DC9900682F0B /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEDE5771B44DC9900682F0B /* GlanceController.swift */; };
 		CAEDE57A1B44DC9900682F0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAEDE5791B44DC9900682F0B /* Images.xcassets */; };
 		CAEDE57E1B44DC9A00682F0B /* Cash4Poo WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = CAEDE57D1B44DC9A00682F0B /* Cash4Poo WatchKit App.app */; };
@@ -81,10 +82,11 @@
 		CA7D16171B44D3FD0066B4D1 /* Cash4PooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cash4PooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7D161C1B44D3FD0066B4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA7D161D1B44D3FD0066B4D1 /* Cash4PooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash4PooTests.swift; sourceTree = "<group>"; };
+		CAAEE74A1B483C0300B524E5 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		CAC043341B477BDA0089765D /* Cash4Poo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Cash4Poo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		CAEDE5711B44DC9900682F0B /* Cash4Poo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Cash4Poo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAEDE5741B44DC9900682F0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAEDE5751B44DC9900682F0B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		CAEDE5751B44DC9900682F0B /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		CAEDE5771B44DC9900682F0B /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		CAEDE5791B44DC9900682F0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CAEDE57D1B44DC9A00682F0B /* Cash4Poo WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash4Poo WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				CAC043341B477BDA0089765D /* Cash4Poo WatchKit Extension.entitlements */,
-				CAEDE5751B44DC9900682F0B /* InterfaceController.swift */,
+				CAEDE5751B44DC9900682F0B /* MainController.swift */,
+				CAAEE74A1B483C0300B524E5 /* SettingController.swift */,
 				CAEDE5771B44DC9900682F0B /* GlanceController.swift */,
 				CAEDE5791B44DC9900682F0B /* Images.xcassets */,
 				CAEDE5731B44DC9900682F0B /* Supporting Files */,
@@ -407,7 +410,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAEDE5761B44DC9900682F0B /* InterfaceController.swift in Sources */,
+				CAAEE74B1B483C0300B524E5 /* SettingController.swift in Sources */,
+				CAEDE5761B44DC9900682F0B /* MainController.swift in Sources */,
 				CAEDE5781B44DC9900682F0B /* GlanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

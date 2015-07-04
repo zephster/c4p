@@ -79,7 +79,7 @@ class PooWatch : NSObject
 }
 
 
-class InterfaceController: WKInterfaceController {
+class MainController: WKInterfaceController {
     @IBOutlet weak var lblStopwatch: WKInterfaceLabel!
     @IBOutlet weak var btnStart: WKInterfaceButton!
     @IBOutlet weak var btnStop: WKInterfaceButton!
@@ -123,6 +123,11 @@ class InterfaceController: WKInterfaceController {
     @IBAction func setAnnualSalary()
     {
         println("setAnnualSalary - bring up picker")
+
+        // todo: replace context with whatever value i'm changing
+        // alo, make it an object so i can specify settingType
+        // (for modal re-use with different settings)
+        self.presentControllerWithName("ChangeSetting", context: nil)
     }
 
     @IBAction func setWorkHours()

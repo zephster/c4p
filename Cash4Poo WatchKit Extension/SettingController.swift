@@ -16,7 +16,6 @@ class SettingController: WKInterfaceController
 
     // buttans!!1!
     @IBOutlet weak var btnClr: WKInterfaceButton!
-    @IBOutlet weak var btnDot: WKInterfaceButton!
     @IBOutlet weak var btn0: WKInterfaceButton!
     @IBOutlet weak var btn1: WKInterfaceButton!
     @IBOutlet weak var btn2: WKInterfaceButton!
@@ -52,7 +51,7 @@ class SettingController: WKInterfaceController
 
 
 
-    @IBAction func btnClrTap() { self.setValue(0, updateLabel: true) }
+    @IBAction func btnClrTap() { self.setValue(0, updateLabelWithValue: true) }
     @IBAction func btn0Tap() { self.appendValue(0) }
     @IBAction func btn1Tap() { self.appendValue(1) }
     @IBAction func btn2Tap() { self.appendValue(2) }
@@ -63,8 +62,6 @@ class SettingController: WKInterfaceController
     @IBAction func btn7Tap() { self.appendValue(7) }
     @IBAction func btn8Tap() { self.appendValue(8) }
     @IBAction func btn9Tap() { self.appendValue(9) }
-    // dot
-
 
     // this will be called by the buttons
     func appendValue(appendVal: Int)
@@ -74,17 +71,17 @@ class SettingController: WKInterfaceController
         // todo: check length, limit to like 9?
 
         let appendedValInt:Int? = appendedValStr.toInt()
-        self.setValue(appendedValInt, updateLabel: true)
+        self.setValue(appendedValInt, updateLabelWithValue: true)
     }
 
 
 
     // set value, and update label
-    func setValue(value: Int?, updateLabel: Bool? = nil)
+    func setValue(value: Int?, updateLabelWithValue: Bool? = nil)
     {
         self.value = value
 
-        if (updateLabel == true)
+        if (updateLabelWithValue == true)
         {
             self.updateLabel()
         }
@@ -94,7 +91,17 @@ class SettingController: WKInterfaceController
     {
         if (label == nil)
         {
-            self.lblValue.setText("\(self.value!)")
+            var prepend: String?
+
+            switch self.settingType!
+            {
+                case "annualSalary":
+                    prepend = "$"
+                default:
+                    prepend = ""
+            }
+
+            self.updateLabel(label: "\(prepend!)\(self.value!)")
         }
         else
         {
@@ -107,7 +114,6 @@ class SettingController: WKInterfaceController
         presentTextInputControllerWithSuggestions(nil,
             allowedInputMode: .Plain,
             completion: {(input) -> Void in
-                var labelText: String = "Please try again."
                 if (input != nil)
                 {
                     let inputStr = input[0] as? String
@@ -120,21 +126,13 @@ class SettingController: WKInterfaceController
 
                     if (inputInt != nil)
                     {
-                        switch self.settingType!
-                        {
-                            case "annualSalary":
-                                labelText = "$\(inputStr!)"
-                            case "workHours":
-                                labelText = inputStr!
-                            default:
-                                labelText = "Invalid context."
-                        }
-
-                        self.setValue(inputInt)
+                        self.setValue(inputInt, updateLabelWithValue: true)
                     }
                 }
-
-                self.updateLabel(label: labelText)
+                else
+                {
+                    self.updateLabel(label: "Please try again.")
+                }
             }
         )
     }
@@ -147,7 +145,10 @@ class SettingController: WKInterfaceController
 
         self.settingType = context as? String
 
+        self.setValue(0, updateLabelWithValue: true)
+
         // immediately try to get a dictated value
-//        self.getDictatedValue()
+        // todo: make this a setting in the watch app, just to see how to do that stuff
+        // self.getDictatedValue()
     }
 }

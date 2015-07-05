@@ -63,7 +63,7 @@
                                     <action selector="setWorkHours" destination="AgC-eL-Hgc" id="nVD-4L-iHq"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Save 💩 Session" id="PfS-C5-I1g"/>
+                            <menuItem title="Save 💩 Session" icon="accept" id="PfS-C5-I1g"/>
                         </items>
                     </menu>
                     <connections>
@@ -155,14 +155,11 @@
                                 </group>
                                 <group width="1" height="0.25" alignment="left" id="6xf-kE-2lU">
                                     <items>
-                                        <button width="0.33300000000000002" height="1" alignment="left" title="0" id="Mr3-u8-R9x">
+                                        <button width="0.66600000000000004" height="1" alignment="left" title="0" id="Mr3-u8-R9x">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="btn0Tap" destination="faP-eP-Gng" id="WKz-wI-BDV"/>
                                             </connections>
-                                        </button>
-                                        <button width="0.33300000000000002" height="1" alignment="left" title="." id="nCc-Dr-0OA">
-                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
                                         </button>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="C" id="rIR-IE-yrw">
                                             <color key="backgroundColor" red="0.44313725490196076" green="0.0078431372549019607" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,7 +201,6 @@
                         <outlet property="btn9" destination="3DA-we-RMr" id="Oxw-ck-3Hb"/>
                         <outlet property="btnClr" destination="rIR-IE-yrw" id="Ibo-Zd-Is1"/>
                         <outlet property="btnDictate" destination="bfK-er-9a3" id="myc-4h-Gel"/>
-                        <outlet property="btnDot" destination="nCc-Dr-0OA" id="QQJ-vf-leK"/>
                         <outlet property="btnSave" destination="TPl-2g-ibv" id="VWu-AN-PnY"/>
                         <outlet property="lblValue" destination="HWM-XU-7ez" id="yrQ-rL-9sI"/>
                     </connections>

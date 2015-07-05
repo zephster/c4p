@@ -79,25 +79,77 @@
             <objects>
                 <controller identifier="WatchSettings" title="Cancel" id="faP-eP-Gng" customClass="SettingController" customModule="Cash4Poo_WatchKit_Extension">
                     <items>
-                        <group width="1" height="107" alignment="left" layout="vertical" id="2E9-1h-tqz">
+                        <group width="1" height="0.14999999999999999" alignment="left" id="d8F-rb-gel">
                             <items>
-                                <label width="1" alignment="left" text="0" textAlignment="center" id="HWM-XU-7ez"/>
+                                <label width="1" height="1" alignment="left" text="0" textAlignment="center" id="HWM-XU-7ez"/>
                             </items>
-                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
-                            <variation key="device=watch42mm" height="130">
-                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
-                            </variation>
                         </group>
-                        <group width="1" height="39" alignment="left" id="M4B-uM-4F6">
+                        <group width="1" height="0.70000000000000007" alignment="left" verticalAlignment="center" layout="vertical" id="2E9-1h-tqz">
                             <items>
-                                <button width="95" alignment="left" title="Save" id="TPl-2g-ibv">
+                                <group width="1" height="0.25" alignment="left" id="9n8-8C-PII">
+                                    <items>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="7" id="cnn-40-j7G">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="8" id="2xN-4H-g1a">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="9" id="3DA-we-RMr">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" height="0.25" alignment="left" id="6ib-Pu-py8">
+                                    <items>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="4" id="wDR-xn-dW3">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="5" id="VhE-wF-4pS">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="6" id="xT5-Lh-jtG">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" height="0.25" alignment="left" id="O6n-fL-aaj">
+                                    <items>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="1" id="N8E-44-OyJ">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="2" id="swg-V7-1JT">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="3" id="c7Z-0B-ALV">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" height="0.25" alignment="left" id="6xf-kE-2lU">
+                                    <items>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="0" id="Mr3-u8-R9x">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="." id="nCc-Dr-0OA">
+                                            <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                        <button width="0.33300000000000002" height="1" alignment="left" title="C" id="rIR-IE-yrw">
+                                            <color key="backgroundColor" red="0.44313725490196076" green="0.0078431372549019607" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" height="0.14999999999999999" alignment="left" verticalAlignment="bottom" id="M4B-uM-4F6">
+                            <items>
+                                <button width="0.70000000000000007" height="1" alignment="left" title="Save" id="TPl-2g-ibv">
                                     <color key="backgroundColor" red="0.062745098039215685" green="0.46274509803921571" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="save" destination="faP-eP-Gng" id="nDj-Yh-m9w"/>
                                     </connections>
                                 </button>
-                                <button width="37" alignment="left" title="Mic" id="bfK-er-9a3">
-                                    <variation key="device=watch42mm" width="57"/>
+                                <button width="0.30000000000000016" height="1" alignment="left" title="Mic" id="bfK-er-9a3">
+                                    <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="dictate" destination="faP-eP-Gng" id="mVE-jC-AJr"/>
                                     </connections>
@@ -112,7 +164,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="307" y="206"/>
+            <point key="canvasLocation" x="307" y="209.57500138506293"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">

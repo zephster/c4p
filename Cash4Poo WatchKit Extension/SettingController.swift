@@ -30,6 +30,21 @@ class SettingController: WKInterfaceController
     var value:Int? = 0
     var settingType:String?
 
+    // buttan actions
+    @IBAction func btnClrTap() { self.setValue(0, updateLabelWithValue: true) }
+    @IBAction func btn0Tap() { self.appendValue(0) }
+    @IBAction func btn1Tap() { self.appendValue(1) }
+    @IBAction func btn2Tap() { self.appendValue(2) }
+    @IBAction func btn3Tap() { self.appendValue(3) }
+    @IBAction func btn4Tap() { self.appendValue(4) }
+    @IBAction func btn5Tap() { self.appendValue(5) }
+    @IBAction func btn6Tap() { self.appendValue(6) }
+    @IBAction func btn7Tap() { self.appendValue(7) }
+    @IBAction func btn8Tap() { self.appendValue(8) }
+    @IBAction func btn9Tap() { self.appendValue(9) }
+
+
+
     @IBAction func save()
     {
         // todo: communicate with ios app to save something
@@ -49,21 +64,6 @@ class SettingController: WKInterfaceController
         self.getDictatedValue()
     }
 
-
-
-    @IBAction func btnClrTap() { self.setValue(0, updateLabelWithValue: true) }
-    @IBAction func btn0Tap() { self.appendValue(0) }
-    @IBAction func btn1Tap() { self.appendValue(1) }
-    @IBAction func btn2Tap() { self.appendValue(2) }
-    @IBAction func btn3Tap() { self.appendValue(3) }
-    @IBAction func btn4Tap() { self.appendValue(4) }
-    @IBAction func btn5Tap() { self.appendValue(5) }
-    @IBAction func btn6Tap() { self.appendValue(6) }
-    @IBAction func btn7Tap() { self.appendValue(7) }
-    @IBAction func btn8Tap() { self.appendValue(8) }
-    @IBAction func btn9Tap() { self.appendValue(9) }
-
-    // this will be called by the buttons
     func appendValue(appendVal: Int)
     {
         let appendedValStr:String = "\(self.value!)\(appendVal)"
@@ -74,9 +74,6 @@ class SettingController: WKInterfaceController
         self.setValue(appendedValInt, updateLabelWithValue: true)
     }
 
-
-
-    // set value, and update label
     func setValue(value: Int?, updateLabelWithValue: Bool? = nil)
     {
         self.value = value
@@ -87,21 +84,24 @@ class SettingController: WKInterfaceController
         }
     }
 
-    private func updateLabel(label: String? = nil)
+    func updateLabel(label: String? = nil)
     {
         if (label == nil)
         {
-            var prepend: String?
+            var labelText: String?
 
             switch self.settingType!
             {
                 case "annualSalary":
-                    prepend = "$"
+                    let formatter = NSNumberFormatter()
+                    formatter.numberStyle = .CurrencyStyle
+                    formatter.maximumFractionDigits = 0
+                    labelText = formatter.stringFromNumber(self.value!)
                 default:
-                    prepend = ""
+                    labelText = String(self.value!)
             }
 
-            self.updateLabel(label: "\(prepend!)\(self.value!)")
+            self.updateLabel(label: "\(labelText!)")
         }
         else
         {
@@ -127,6 +127,10 @@ class SettingController: WKInterfaceController
                     if (inputInt != nil)
                     {
                         self.setValue(inputInt, updateLabelWithValue: true)
+                    }
+                    else
+                    {
+                        self.updateLabel(label: "Please try again.")
                     }
                 }
                 else

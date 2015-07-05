@@ -72,20 +72,15 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="163.89743589743591" y="280.71794871794873"/>
+            <point key="canvasLocation" x="164" y="280"/>
         </scene>
         <!--Cancel-->
         <scene sceneID="DSg-mG-S7n">
             <objects>
-                <controller identifier="ChangeSetting" title="Cancel" id="faP-eP-Gng" customClass="SettingController" customModule="Cash4Poo_WatchKit_Extension">
+                <controller identifier="WatchSettings" title="Cancel" id="faP-eP-Gng" customClass="SettingController" customModule="Cash4Poo_WatchKit_Extension">
                     <items>
                         <group width="1" height="107" alignment="left" layout="vertical" id="2E9-1h-tqz">
                             <items>
-                                <slider width="1" alignment="left" continuous="YES" value="50000" maximum="100000" steps="1000" id="WsM-lx-CDo">
-                                    <connections>
-                                        <action selector="changeValue:" destination="faP-eP-Gng" id="va1-Im-QBI"/>
-                                    </connections>
-                                </slider>
                                 <label width="1" alignment="left" text="0" textAlignment="center" id="HWM-XU-7ez"/>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
@@ -95,19 +90,25 @@
                         </group>
                         <group width="1" height="39" alignment="left" id="M4B-uM-4F6">
                             <items>
-                                <button width="1" alignment="left" title="Save" id="TPl-2g-ibv">
+                                <button width="95" alignment="left" title="Save" id="TPl-2g-ibv">
                                     <color key="backgroundColor" red="0.062745098039215685" green="0.46274509803921571" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="save" destination="faP-eP-Gng" id="nDj-Yh-m9w"/>
+                                    </connections>
+                                </button>
+                                <button width="37" alignment="left" title="Mic" id="bfK-er-9a3">
+                                    <variation key="device=watch42mm" width="57"/>
+                                    <connections>
+                                        <action selector="dictate" destination="faP-eP-Gng" id="mVE-jC-AJr"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="btnDictate" destination="bfK-er-9a3" id="myc-4h-Gel"/>
                         <outlet property="btnSave" destination="TPl-2g-ibv" id="VWu-AN-PnY"/>
                         <outlet property="lblValue" destination="HWM-XU-7ez" id="yrQ-rL-9sI"/>
-                        <outlet property="sldrSalary" destination="WsM-lx-CDo" id="uDA-lH-KeV"/>
                     </connections>
                 </controller>
             </objects>

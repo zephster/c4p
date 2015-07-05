@@ -122,17 +122,12 @@ class MainController: WKInterfaceController {
 
     @IBAction func setAnnualSalary()
     {
-        println("setAnnualSalary - bring up picker")
-
-        // todo: replace context with whatever value i'm changing
-        // alo, make it an object so i can specify settingType
-        // (for modal re-use with different settings)
-        self.presentControllerWithName("ChangeSetting", context: nil)
+        self.presentControllerWithName("WatchSettings", context: "annualSalary")
     }
 
     @IBAction func setWorkHours()
     {
-        println("setWorkHours - bring up picker")
+        self.presentControllerWithName("WatchSettings", context: "workHours")
     }
 
     override func awakeWithContext(context: AnyObject?) {

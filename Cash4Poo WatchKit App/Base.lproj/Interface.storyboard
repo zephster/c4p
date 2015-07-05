@@ -63,6 +63,7 @@
                                     <action selector="setWorkHours" destination="AgC-eL-Hgc" id="nVD-4L-iHq"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Save 💩 Session" id="PfS-C5-I1g"/>
                         </items>
                     </menu>
                     <connections>
@@ -90,12 +91,21 @@
                                     <items>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="7" id="cnn-40-j7G">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn7Tap" destination="faP-eP-Gng" id="57C-Pk-lGD"/>
+                                            </connections>
                                         </button>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="8" id="2xN-4H-g1a">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn8Tap" destination="faP-eP-Gng" id="llt-Dc-Dj2"/>
+                                            </connections>
                                         </button>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="9" id="3DA-we-RMr">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn9Tap" destination="faP-eP-Gng" id="41f-UQ-jO6"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
@@ -103,12 +113,21 @@
                                     <items>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="4" id="wDR-xn-dW3">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn4Tap" destination="faP-eP-Gng" id="8xn-Rm-Zqv"/>
+                                            </connections>
                                         </button>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="5" id="VhE-wF-4pS">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn5Tap" destination="faP-eP-Gng" id="VoG-Gq-HhI"/>
+                                            </connections>
                                         </button>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="6" id="xT5-Lh-jtG">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn6Tap" destination="faP-eP-Gng" id="1l2-Rn-xrd"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
@@ -116,12 +135,21 @@
                                     <items>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="1" id="N8E-44-OyJ">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn1Tap" destination="faP-eP-Gng" id="KFP-LX-PBJ"/>
+                                            </connections>
                                         </button>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="2" id="swg-V7-1JT">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn2Tap" destination="faP-eP-Gng" id="JGW-QG-CXD"/>
+                                            </connections>
                                         </button>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="3" id="c7Z-0B-ALV">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn3Tap" destination="faP-eP-Gng" id="3ce-50-nKx"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
@@ -129,12 +157,18 @@
                                     <items>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="0" id="Mr3-u8-R9x">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btn0Tap" destination="faP-eP-Gng" id="WKz-wI-BDV"/>
+                                            </connections>
                                         </button>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="." id="nCc-Dr-0OA">
                                             <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
                                         </button>
                                         <button width="0.33300000000000002" height="1" alignment="left" title="C" id="rIR-IE-yrw">
                                             <color key="backgroundColor" red="0.44313725490196076" green="0.0078431372549019607" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btnClrTap" destination="faP-eP-Gng" id="uOi-rX-G1a"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
@@ -148,8 +182,8 @@
                                         <action selector="save" destination="faP-eP-Gng" id="nDj-Yh-m9w"/>
                                     </connections>
                                 </button>
-                                <button width="0.30000000000000016" height="1" alignment="left" title="Mic" id="bfK-er-9a3">
-                                    <color key="backgroundColor" red="0.30312232531901639" green="0.30312232531901639" blue="0.30312232531901639" alpha="1" colorSpace="calibratedRGB"/>
+                                <button width="0.30000000000000016" height="1" alignment="left" title="🎤" id="bfK-er-9a3">
+                                    <color key="backgroundColor" red="0.95512979499999995" green="0.95512979499999995" blue="0.95512979499999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="dictate" destination="faP-eP-Gng" id="mVE-jC-AJr"/>
                                     </connections>
@@ -158,13 +192,25 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="btn0" destination="Mr3-u8-R9x" id="1go-uu-TpH"/>
+                        <outlet property="btn1" destination="N8E-44-OyJ" id="e2r-u9-kij"/>
+                        <outlet property="btn2" destination="swg-V7-1JT" id="sPi-Wv-50U"/>
+                        <outlet property="btn3" destination="c7Z-0B-ALV" id="FpO-9N-9B0"/>
+                        <outlet property="btn4" destination="wDR-xn-dW3" id="2jP-7x-UCo"/>
+                        <outlet property="btn5" destination="VhE-wF-4pS" id="5JB-m6-j5T"/>
+                        <outlet property="btn6" destination="xT5-Lh-jtG" id="7UQ-i0-FdC"/>
+                        <outlet property="btn7" destination="cnn-40-j7G" id="xhp-T0-9xm"/>
+                        <outlet property="btn8" destination="2xN-4H-g1a" id="a5p-Kn-Lc1"/>
+                        <outlet property="btn9" destination="3DA-we-RMr" id="Oxw-ck-3Hb"/>
+                        <outlet property="btnClr" destination="rIR-IE-yrw" id="Ibo-Zd-Is1"/>
                         <outlet property="btnDictate" destination="bfK-er-9a3" id="myc-4h-Gel"/>
+                        <outlet property="btnDot" destination="nCc-Dr-0OA" id="QQJ-vf-leK"/>
                         <outlet property="btnSave" destination="TPl-2g-ibv" id="VWu-AN-PnY"/>
                         <outlet property="lblValue" destination="HWM-XU-7ez" id="yrQ-rL-9sI"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="307" y="209.57500138506293"/>
+            <point key="canvasLocation" x="305" y="206"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">

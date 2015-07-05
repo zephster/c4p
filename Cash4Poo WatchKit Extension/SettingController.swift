@@ -14,14 +14,28 @@ class SettingController: WKInterfaceController
     @IBOutlet weak var btnDictate: WKInterfaceButton!
     @IBOutlet weak var lblValue: WKInterfaceLabel!
 
-    var dictatedValue:Int?
+    // buttans!!1!
+    @IBOutlet weak var btnClr: WKInterfaceButton!
+    @IBOutlet weak var btnDot: WKInterfaceButton!
+    @IBOutlet weak var btn0: WKInterfaceButton!
+    @IBOutlet weak var btn1: WKInterfaceButton!
+    @IBOutlet weak var btn2: WKInterfaceButton!
+    @IBOutlet weak var btn3: WKInterfaceButton!
+    @IBOutlet weak var btn4: WKInterfaceButton!
+    @IBOutlet weak var btn5: WKInterfaceButton!
+    @IBOutlet weak var btn6: WKInterfaceButton!
+    @IBOutlet weak var btn7: WKInterfaceButton!
+    @IBOutlet weak var btn8: WKInterfaceButton!
+    @IBOutlet weak var btn9: WKInterfaceButton!
+
+    var value:Int? = 0
     var settingType:String?
 
     @IBAction func save()
     {
         // todo: communicate with ios app to save something
 
-        if (self.dictatedValue != nil)
+        if (self.value != nil)
         {
             self.dismissController()
         }
@@ -37,6 +51,57 @@ class SettingController: WKInterfaceController
     }
 
 
+
+    @IBAction func btnClrTap() { self.setValue(0, updateLabel: true) }
+    @IBAction func btn0Tap() { self.appendValue(0) }
+    @IBAction func btn1Tap() { self.appendValue(1) }
+    @IBAction func btn2Tap() { self.appendValue(2) }
+    @IBAction func btn3Tap() { self.appendValue(3) }
+    @IBAction func btn4Tap() { self.appendValue(4) }
+    @IBAction func btn5Tap() { self.appendValue(5) }
+    @IBAction func btn6Tap() { self.appendValue(6) }
+    @IBAction func btn7Tap() { self.appendValue(7) }
+    @IBAction func btn8Tap() { self.appendValue(8) }
+    @IBAction func btn9Tap() { self.appendValue(9) }
+    // dot
+
+
+    // this will be called by the buttons
+    func appendValue(appendVal: Int)
+    {
+        let appendedValStr:String = "\(self.value!)\(appendVal)"
+
+        // todo: check length, limit to like 9?
+
+        let appendedValInt:Int? = appendedValStr.toInt()
+        self.setValue(appendedValInt, updateLabel: true)
+    }
+
+
+
+    // set value, and update label
+    func setValue(value: Int?, updateLabel: Bool? = nil)
+    {
+        self.value = value
+
+        if (updateLabel == true)
+        {
+            self.updateLabel()
+        }
+    }
+
+    private func updateLabel(label: String? = nil)
+    {
+        if (label == nil)
+        {
+            self.lblValue.setText("\(self.value!)")
+        }
+        else
+        {
+            self.lblValue.setText(label)
+        }
+    }
+
     func getDictatedValue()
     {
         presentTextInputControllerWithSuggestions(nil,
@@ -45,15 +110,14 @@ class SettingController: WKInterfaceController
                 var labelText: String = "Please try again."
                 if (input != nil)
                 {
-                    // inputStr used for display
                     let inputStr = input[0] as? String
-                    
-                    // inputStrNC no commas for Int cast
+
+                    // no commas for Int
                     let inputStrNC = inputStr!.stringByReplacingOccurrencesOfString(",", withString: "")
-                    
-                    // inputInt used for saving the setting
+
+                    // used for saving the setting
                     let inputInt:Int? = inputStrNC.toInt()
-                    
+
                     if (inputInt != nil)
                     {
                         switch self.settingType!
@@ -66,11 +130,11 @@ class SettingController: WKInterfaceController
                                 labelText = "Invalid context."
                         }
 
-                        self.dictatedValue = inputInt!
+                        self.setValue(inputInt)
                     }
                 }
 
-                self.lblValue.setText(labelText)
+                self.updateLabel(label: labelText)
             }
         )
     }
@@ -84,6 +148,6 @@ class SettingController: WKInterfaceController
         self.settingType = context as? String
 
         // immediately try to get a dictated value
-        self.getDictatedValue()
+//        self.getDictatedValue()
     }
 }

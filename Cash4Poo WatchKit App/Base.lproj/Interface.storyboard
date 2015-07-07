@@ -173,16 +173,16 @@
                         </group>
                         <group width="1" height="0.14999999999999999" alignment="left" verticalAlignment="bottom" id="M4B-uM-4F6">
                             <items>
-                                <button width="0.70000000000000007" height="1" alignment="left" title="Save" id="TPl-2g-ibv">
+                                <button width="0.66600000000000004" height="1" alignment="left" title="Save" id="LSl-7P-wXx">
                                     <color key="backgroundColor" red="0.062745098039215685" green="0.46274509803921571" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
-                                        <action selector="save" destination="faP-eP-Gng" id="nDj-Yh-m9w"/>
+                                        <action selector="save" destination="faP-eP-Gng" id="dSr-cM-50l"/>
                                     </connections>
                                 </button>
-                                <button width="0.30000000000000016" height="1" alignment="left" title="🎤" id="bfK-er-9a3">
-                                    <color key="backgroundColor" red="0.95512979499999995" green="0.95512979499999995" blue="0.95512979499999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="🎤" id="giP-mM-O2f">
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
-                                        <action selector="dictate" destination="faP-eP-Gng" id="mVE-jC-AJr"/>
+                                        <action selector="dictate" destination="faP-eP-Gng" id="vbq-JT-jIG"/>
                                     </connections>
                                 </button>
                             </items>
@@ -200,8 +200,8 @@
                         <outlet property="btn8" destination="2xN-4H-g1a" id="a5p-Kn-Lc1"/>
                         <outlet property="btn9" destination="3DA-we-RMr" id="Oxw-ck-3Hb"/>
                         <outlet property="btnClr" destination="rIR-IE-yrw" id="Ibo-Zd-Is1"/>
-                        <outlet property="btnDictate" destination="bfK-er-9a3" id="myc-4h-Gel"/>
-                        <outlet property="btnSave" destination="TPl-2g-ibv" id="VWu-AN-PnY"/>
+                        <outlet property="btnDictate" destination="giP-mM-O2f" id="J1B-36-PUw"/>
+                        <outlet property="btnSave" destination="LSl-7P-wXx" id="Udy-TB-ZID"/>
                         <outlet property="lblValue" destination="HWM-XU-7ez" id="yrQ-rL-9sI"/>
                     </connections>
                 </controller>

@@ -17,7 +17,7 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                                 <label alignment="left" text="Gross (lol) Profit" id="3Mn-bx-Vpc"/>
-                                <label alignment="center" text="$13.37" id="tqE-s4-xl9">
+                                <label alignment="center" text="$0.00" id="tqE-s4-xl9">
                                     <color key="textColor" red="0.14322025340625244" green="1" blue="0.017359335829717937" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                             </items>
@@ -33,7 +33,7 @@
                                     <color key="backgroundColor" red="0.52680638227513232" green="0.066758882029247124" blue="0.030856650092249478" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="20"/>
                                     <connections>
-                                        <action selector="stopPooping" destination="AgC-eL-Hgc" id="APw-83-Azw"/>
+                                        <action selector="stopButtonTapped" destination="AgC-eL-Hgc" id="Fet-7D-Xvf"/>
                                     </connections>
                                 </button>
                                 <button width="0.50000000000000011" alignment="left" title="Start" id="0Uj-Sr-iUt">
@@ -41,7 +41,7 @@
                                     <color key="backgroundColor" red="0.0011030352818218966" green="0.52680638227513232" blue="0.016519111441057926" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="20"/>
                                     <connections>
-                                        <action selector="startPooping" destination="AgC-eL-Hgc" id="8Ch-JB-j18"/>
+                                        <action selector="startButtonTapped" destination="AgC-eL-Hgc" id="6Tt-ac-DGf"/>
                                     </connections>
                                 </button>
                             </items>
@@ -176,13 +176,13 @@
                                 <button width="0.66600000000000004" height="1" alignment="left" title="Save" id="LSl-7P-wXx">
                                     <color key="backgroundColor" red="0.062745098039215685" green="0.46274509803921571" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
-                                        <action selector="save" destination="faP-eP-Gng" id="dSr-cM-50l"/>
+                                        <action selector="saveButtonTap" destination="faP-eP-Gng" id="9vp-wY-DvO"/>
                                     </connections>
                                 </button>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="🎤" id="giP-mM-O2f">
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
-                                        <action selector="dictate" destination="faP-eP-Gng" id="vbq-JT-jIG"/>
+                                        <action selector="dictateButtonTap" destination="faP-eP-Gng" id="34p-E8-jMh"/>
                                     </connections>
                                 </button>
                             </items>

@@ -79,32 +79,54 @@ class PooWatch : NSObject
 }
 
 
-class MainController: WKInterfaceController {
+class MainController: WKInterfaceController
+{
     @IBOutlet weak var lblStopwatch: WKInterfaceLabel!
     @IBOutlet weak var btnStart: WKInterfaceButton!
     @IBOutlet weak var btnStop: WKInterfaceButton!
-    
+
+
     var pooWatch: PooWatch?
+    var settings: NSUserDefaults?
     var stopShouldReset:Bool = false
 
-    @IBAction func startPooping()
+
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
+
+        // Configure interface objects here.
+        self.settings = NSUserDefaults(suiteName: "group.cash4poo")
+    }
+
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+    }
+
+    override func didDeactivate() {
+        // This method is called when watch view controller is no longer visible
+        super.didDeactivate()
+    }
+
+
+    func startPooping()
     {
         self.btnStart.setEnabled(false)
         self.btnStop.setEnabled(true)
-        
+
         if (self.pooWatch == nil)
         {
             self.pooWatch = PooWatch(stopwatch_label: self.lblStopwatch)
         }
-        
+
         self.pooWatch!.start()
     }
 
-    @IBAction func stopPooping()
+    func stopPooping()
     {
         self.pooWatch!.stop()
         self.btnStart.setEnabled(true)
-        
+
         if (self.stopShouldReset == false)
         {
             self.stopShouldReset = true
@@ -120,6 +142,22 @@ class MainController: WKInterfaceController {
     }
 
 
+
+
+
+
+
+    // UI actions
+    @IBAction func startButtonTapped()
+    {
+        self.startPooping()
+    }
+
+    @IBAction func stopButtonTapped()
+    {
+        self.stopPooping()
+    }
+
     @IBAction func setAnnualSalary()
     {
         self.presentControllerWithName("WatchSettings", context: "annualSalary")
@@ -128,21 +166,5 @@ class MainController: WKInterfaceController {
     @IBAction func setWorkHours()
     {
         self.presentControllerWithName("WatchSettings", context: "workHours")
-    }
-
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
-
-        // Configure interface objects here.
-    }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
     }
 }

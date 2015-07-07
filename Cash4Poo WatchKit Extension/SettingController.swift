@@ -27,56 +27,53 @@ class SettingController: WKInterfaceController
     @IBOutlet weak var btn8: WKInterfaceButton!
     @IBOutlet weak var btn9: WKInterfaceButton!
 
-    var value:Int? = 0
+
+    var inputValue:Int = 0
     var settingType:String?
-
-    // buttan actions
-    @IBAction func btnClrTap() { self.setValue(0, updateLabelWithValue: true) }
-    @IBAction func btn0Tap() { self.appendValue(0) }
-    @IBAction func btn1Tap() { self.appendValue(1) }
-    @IBAction func btn2Tap() { self.appendValue(2) }
-    @IBAction func btn3Tap() { self.appendValue(3) }
-    @IBAction func btn4Tap() { self.appendValue(4) }
-    @IBAction func btn5Tap() { self.appendValue(5) }
-    @IBAction func btn6Tap() { self.appendValue(6) }
-    @IBAction func btn7Tap() { self.appendValue(7) }
-    @IBAction func btn8Tap() { self.appendValue(8) }
-    @IBAction func btn9Tap() { self.appendValue(9) }
+    var userData:NSUserDefaults?
 
 
-
-    @IBAction func save()
+    // load up user data, set label
+    override func awakeWithContext(context: AnyObject?)
     {
-        // todo: communicate with ios app to save something
+        super.awakeWithContext(context)
 
-        if (self.value != nil)
+        self.userData = NSUserDefaults(suiteName: "group.cash4poo")
+        self.settingType = context as? String
+
+        // load setting and populate label
+        if let userDataValue = self.userData?.integerForKey(self.settingType!)
         {
-            self.dismissController()
+            self.setValue(userDataValue, updateLabelWithValue: true)
         }
         else
         {
-            self.lblValue.setText("No value entered.")
+            self.setValue(0, updateLabelWithValue: true)
+        }
+
+        // immediately try to get a dictated value
+        // todo: make this a setting in the watch app
+        // self.getDictatedValue()
+    }
+
+
+    // append number and update the label
+    func appendValue(appendVal: Int)
+    {
+        let appendedValStr:String = "\(self.inputValue)\(appendVal)"
+
+        // too many = crash. like 15 or so, i didn't count
+        if (count(appendedValStr) <= 10)
+        {
+            let appendedValInt:Int? = appendedValStr.toInt()
+            self.setValue(appendedValInt, updateLabelWithValue: true)
         }
     }
 
-    @IBAction func dictate()
-    {
-        self.getDictatedValue()
-    }
-
-    func appendValue(appendVal: Int)
-    {
-        let appendedValStr:String = "\(self.value!)\(appendVal)"
-
-        // todo: check length, limit to like 9?
-
-        let appendedValInt:Int? = appendedValStr.toInt()
-        self.setValue(appendedValInt, updateLabelWithValue: true)
-    }
-
+    // directly set value, option to update label
     func setValue(value: Int?, updateLabelWithValue: Bool? = nil)
     {
-        self.value = value
+        self.inputValue = value!
 
         if (updateLabelWithValue == true)
         {
@@ -84,6 +81,7 @@ class SettingController: WKInterfaceController
         }
     }
 
+    // update label with provided string, or if nil, the user inputted value
     func updateLabel(label: String? = nil)
     {
         if (label == nil)
@@ -96,9 +94,11 @@ class SettingController: WKInterfaceController
                     let formatter = NSNumberFormatter()
                     formatter.numberStyle = .CurrencyStyle
                     formatter.maximumFractionDigits = 0
-                    labelText = formatter.stringFromNumber(self.value!)
+                    labelText = formatter.stringFromNumber(self.inputValue)
+                case "workHours":
+                    fallthrough // basically, use default
                 default:
-                    labelText = String(self.value!)
+                    labelText = String(self.inputValue)
             }
 
             self.updateLabel(label: "\(labelText!)")
@@ -109,14 +109,15 @@ class SettingController: WKInterfaceController
         }
     }
 
+    // get dictated numerical value
     func getDictatedValue()
     {
         presentTextInputControllerWithSuggestions(nil,
             allowedInputMode: .Plain,
-            completion: {(input) -> Void in
-                if (input != nil)
+            completion: {(dictatedInput) -> Void in
+                if (dictatedInput != nil)
                 {
-                    let inputStr = input[0] as? String
+                    let inputStr = dictatedInput[0] as? String
 
                     // no commas for Int
                     let inputStrNC = inputStr!.stringByReplacingOccurrencesOfString(",", withString: "")
@@ -143,16 +144,28 @@ class SettingController: WKInterfaceController
 
 
 
-    override func awakeWithContext(context: AnyObject?)
+    // UI actions
+    @IBAction func saveButtonTap()
     {
-        super.awakeWithContext(context)
-
-        self.settingType = context as? String
-
-        self.setValue(0, updateLabelWithValue: true)
-
-        // immediately try to get a dictated value
-        // todo: make this a setting in the watch app, just to see how to do that stuff
-        // self.getDictatedValue()
+        self.userData!.setInteger(self.inputValue, forKey: self.settingType!)
+        self.userData!.synchronize()
+        self.dismissController()
     }
+
+    @IBAction func dictateButtonTap()
+    {
+        self.getDictatedValue()
+    }
+
+    @IBAction func btnClrTap() { self.setValue(0, updateLabelWithValue: true) }
+    @IBAction func btn0Tap() { self.appendValue(0) }
+    @IBAction func btn1Tap() { self.appendValue(1) }
+    @IBAction func btn2Tap() { self.appendValue(2) }
+    @IBAction func btn3Tap() { self.appendValue(3) }
+    @IBAction func btn4Tap() { self.appendValue(4) }
+    @IBAction func btn5Tap() { self.appendValue(5) }
+    @IBAction func btn6Tap() { self.appendValue(6) }
+    @IBAction func btn7Tap() { self.appendValue(7) }
+    @IBAction func btn8Tap() { self.appendValue(8) }
+    @IBAction func btn9Tap() { self.appendValue(9) }
 }

@@ -83,6 +83,7 @@
 		CA7D161C1B44D3FD0066B4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA7D161D1B44D3FD0066B4D1 /* Cash4PooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash4PooTests.swift; sourceTree = "<group>"; };
 		CAAEE74A1B483C0300B524E5 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		CAAEE74E1B4C8BAE00B524E5 /* Cash4Poo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cash4Poo.entitlements; sourceTree = "<group>"; };
 		CAC043341B477BDA0089765D /* Cash4Poo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Cash4Poo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		CAEDE5711B44DC9900682F0B /* Cash4Poo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Cash4Poo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAEDE5741B44DC9900682F0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		CA7D16041B44D3FD0066B4D1 /* Cash4Poo */ = {
 			isa = PBXGroup;
 			children = (
+				CAAEE74E1B4C8BAE00B524E5 /* Cash4Poo.entitlements */,
 				CA7D16071B44D3FD0066B4D1 /* AppDelegate.swift */,
 				CA7D16091B44D3FD0066B4D1 /* PooWatchViewController.swift */,
 				CA7D160B1B44D3FD0066B4D1 /* Main.storyboard */,
@@ -307,7 +309,7 @@
 						DevelopmentTeam = NQ4369B2L7;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -320,7 +322,7 @@
 						DevelopmentTeam = NQ4369B2L7;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -543,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cash4Poo/Cash4Poo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cash4Poo/Info.plist;
@@ -557,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cash4Poo/Cash4Poo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cash4Poo/Info.plist;
@@ -605,6 +609,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Cash4Poo WatchKit Extension/Cash4Poo WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -612,6 +618,7 @@
 				INFOPLIST_FILE = "Cash4Poo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -620,9 +627,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Cash4Poo WatchKit Extension/Cash4Poo WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Cash4Poo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

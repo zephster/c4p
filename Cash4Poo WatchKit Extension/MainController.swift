@@ -82,6 +82,7 @@ class PooWatch : NSObject
 class MainController: WKInterfaceController
 {
     @IBOutlet weak var lblStopwatch: WKInterfaceLabel!
+    @IBOutlet weak var lblGrossProfit: WKInterfaceLabel!
     @IBOutlet weak var btnStart: WKInterfaceButton!
     @IBOutlet weak var btnStop: WKInterfaceButton!
 
@@ -91,16 +92,12 @@ class MainController: WKInterfaceController
     var stopShouldReset:Bool = false
 
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
-
-        // Configure interface objects here.
-        self.settings = NSUserDefaults(suiteName: "group.cash4poo")
-    }
-
-    override func willActivate() {
+    override func willActivate()
+    {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+
+        self.settings = NSUserDefaults(suiteName: "group.cash4poo")
     }
 
     override func didDeactivate() {
@@ -139,6 +136,29 @@ class MainController: WKInterfaceController
             self.btnStop.setEnabled(false)
             self.btnStop.setTitle("Stop")
         }
+    }
+
+    func calculateGrossProfit()
+    {
+        // salary per week = annualSalary / 52
+        // salary per hour = salary per week / workHours
+        // salary per minute = salary per hour / 60
+        // salary per second = salary per minute / 60
+        let annualSalary = self.settings?.integerForKey("annualSalary")
+        let workHours = self.settings?.integerForKey("workHours")
+
+        let salaryPerWeek = annualSalary! / 52
+        let salaryPerHour = salaryPerWeek / workHours!
+        let salaryPerMinute = salaryPerHour / 60
+        let salaryPerSecond = salaryPerMinute / 60
+
+        // put this in update label method
+        self.lblGrossProfit.setText("$\(salaryPerSecond)")
+    }
+
+    func updateGrossProfitLabel(label: String)
+    {
+
     }
 
 

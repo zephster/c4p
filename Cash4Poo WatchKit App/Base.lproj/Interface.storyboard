@@ -69,6 +69,7 @@
                     <connections>
                         <outlet property="btnStart" destination="0Uj-Sr-iUt" id="7e8-z6-IqS"/>
                         <outlet property="btnStop" destination="33J-uf-tB1" id="sIR-hZ-sCD"/>
+                        <outlet property="lblGrossProfit" destination="tqE-s4-xl9" id="WBY-Sv-JdJ"/>
                         <outlet property="lblStopwatch" destination="JhJ-Ki-msq" id="dEJ-JP-PDr"/>
                     </connections>
                 </controller>
@@ -171,7 +172,7 @@
                                 </group>
                             </items>
                         </group>
-                        <group width="1" height="0.14999999999999999" alignment="left" verticalAlignment="bottom" id="M4B-uM-4F6">
+                        <group width="1" height="0.14999999999999997" alignment="left" verticalAlignment="bottom" id="M4B-uM-4F6">
                             <items>
                                 <button width="0.66600000000000004" height="1" alignment="left" title="Save" id="LSl-7P-wXx">
                                     <color key="backgroundColor" red="0.062745098039215685" green="0.46274509803921571" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
@@ -206,7 +207,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="305" y="206"/>
+            <point key="canvasLocation" x="309" y="206"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">

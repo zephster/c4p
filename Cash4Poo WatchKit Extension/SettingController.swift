@@ -86,7 +86,7 @@ class SettingController: WKInterfaceController
     {
         if (label == nil)
         {
-            var labelText: String?
+            let labelText: String?
 
             switch self.settingType!
             {
@@ -141,7 +141,6 @@ class SettingController: WKInterfaceController
             }
         )
     }
-
 
 
     // UI actions

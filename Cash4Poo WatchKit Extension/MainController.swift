@@ -10,15 +10,15 @@ import WatchKit
 
 class PooWatch : NSObject
 {
-    private var label:WKInterfaceLabel
     private var timer: NSTimer?
     private var startTime: NSDate?
-    
-    init(stopwatch_label: WKInterfaceLabel)
+    private var ticker: (NSTimeInterval, String) -> Void
+
+    init(tickFunction tick: (NSTimeInterval, String) -> Void)
     {
-        self.label = stopwatch_label
+        self.ticker = tick;
     }
-    
+
     var elapsedTime: NSTimeInterval {
         get {
             return NSDate().timeIntervalSinceDate(self.startTime ?? NSDate())
@@ -43,22 +43,17 @@ class PooWatch : NSObject
     func start()
     {
         self.reset()
-        
+
         if (self.timer?.valid != true)
         {
             self.timer = NSTimer.scheduledTimerWithTimeInterval(
                 1.0,
                 target: self,
-                selector: "updatePoopUI",
+                selector: "pooTick",
                 userInfo: nil,
                 repeats: true
             )
         }
-    }
-    
-    func updatePoopUI()
-    {
-        self.label.setText(self.elapsedTimeString)
     }
     
     func stop()
@@ -73,8 +68,19 @@ class PooWatch : NSObject
         
         // reset startTime to 0:00:00
         self.startTime = NSDate()
-        
-        updatePoopUI()
+
+        // update UI with a tick
+        self.pooTick()
+    }
+
+    func pooTick()
+    {
+        self.ticker(self.elapsedTime, self.elapsedTimeString)
+    }
+
+    deinit
+    {
+        self.timer?.invalidate()
     }
 }
 
@@ -108,12 +114,13 @@ class MainController: WKInterfaceController
 
     func startPooping()
     {
+        // todo: dont reset timer state when stopping then re-starting
         self.btnStart.setEnabled(false)
         self.btnStop.setEnabled(true)
 
         if (self.pooWatch == nil)
         {
-            self.pooWatch = PooWatch(stopwatch_label: self.lblStopwatch)
+            self.pooWatch = PooWatch(tickFunction: self.pooTick)
         }
 
         self.pooWatch!.start()
@@ -138,27 +145,33 @@ class MainController: WKInterfaceController
         }
     }
 
-    func calculateGrossProfit()
+    // PooWatch tick, update labels
+    func pooTick(elapsedTime: NSTimeInterval, elapsedTimeString: String)
     {
-        // salary per week = annualSalary / 52
-        // salary per hour = salary per week / workHours
-        // salary per minute = salary per hour / 60
-        // salary per second = salary per minute / 60
+        let grossProfit:Double = self.calculateGrossProfit(elapsedTime)
+
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.maximumFractionDigits = 2
+
+        self.lblStopwatch.setText(elapsedTimeString)
+        self.lblGrossProfit.setText("\(formatter.stringFromNumber(grossProfit)!)")
+    }
+
+    func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double
+    {
         let annualSalary = self.settings?.integerForKey("annualSalary")
         let workHours = self.settings?.integerForKey("workHours")
 
-        let salaryPerWeek = annualSalary! / 52
-        let salaryPerHour = salaryPerWeek / workHours!
-        let salaryPerMinute = salaryPerHour / 60
-        let salaryPerSecond = salaryPerMinute / 60
+        // todo: make this math better
+        // let salaryPerWeek = Double(annualSalary!) / 52
+        // let salaryPerHour = salaryPerWeek / Double(workHours!)
+        // let salaryPerMinute = salaryPerHour / 60
+        // let salaryPerSecond = salaryPerMinute / 60
+        let salaryPerSecond = Double(annualSalary!) / 52 / Double(workHours!) / 60 / 60
+        let currentGrossProfit = salaryPerSecond * round(Double(elapsedTime))
 
-        // put this in update label method
-        self.lblGrossProfit.setText("$\(salaryPerSecond)")
-    }
-
-    func updateGrossProfitLabel(label: String)
-    {
-
+        return currentGrossProfit
     }
 
 

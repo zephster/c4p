@@ -98,6 +98,7 @@ class MainController: WKInterfaceController
     var pooWatch: PooWatch?
     var userData: NSUserDefaults?
     var stopShouldReset:Bool = false
+    var session: [String:String]?
 
 
     override func willActivate()
@@ -164,25 +165,26 @@ class MainController: WKInterfaceController
     {
         if (self.session != nil)
         {
-            println(self.session!)
-
             var newHistory: [[String:String]]
 
             if let history = self.userData?.arrayForKey("history") as? [[String:String]]
             {
                 newHistory = history
                 newHistory.append(self.session!)
-
-                println(newHistory)
             }
             else
             {
                 newHistory = [self.session!]
             }
 
-            println(newHistory)
+            println("newHistory")
 
-            self.userData?.setObject([self.session!], forKey: "history")
+            for item in newHistory
+            {
+                println(item)
+            }
+
+            self.userData?.setObject(newHistory, forKey: "history")
             self.userData?.synchronize()
         }
     }
@@ -201,7 +203,7 @@ class MainController: WKInterfaceController
         self.lblStopwatch.setText(elapsedTimeString)
         self.lblGrossProfit.setText("\(formatter.stringFromNumber(grossProfit!)!)")
 
-        self.session = ["\(elapsedTime)":"\(grossProfit)"]
+        self.session = ["\(elapsedTime)":"\(grossProfit!)"]
     }
 
     func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double?
@@ -230,6 +232,9 @@ class MainController: WKInterfaceController
     @IBAction func stopButtonTapped()
     {
         self.stopPooping()
+    }
+    @IBAction func saveButtonTapped() {
+        self.savePoopSession()
     }
 
     @IBAction func setAnnualSalary()

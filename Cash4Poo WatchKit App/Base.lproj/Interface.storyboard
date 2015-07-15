@@ -10,45 +10,58 @@
             <objects>
                 <controller identifier="Main" title="💰4💩" id="AgC-eL-Hgc" customClass="MainController" customModule="Cash4Poo_WatchKit_Extension">
                     <items>
-                        <group width="1" height="107" alignment="left" layout="vertical" id="DrQ-NK-irI">
+                        <group width="1" height="1" alignment="left" hidden="YES" layout="vertical" id="OlU-4c-8GW" userLabel="No Settings">
                             <items>
-                                <label alignment="left" text="Elapsed Time" id="fpx-Ld-IGY"/>
-                                <label alignment="center" text="0:00:00" id="JhJ-Ki-msq">
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <label alignment="center" verticalAlignment="center" text="Set me up!" numberOfLines="10" id="Riy-tQ-6Lo">
+                                    <color key="textColor" red="0.14172631948347428" green="0.7597883597883599" blue="0.083331660987279177" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="24"/>
                                 </label>
-                                <label alignment="left" text="Gross (lol) Profit" id="3Mn-bx-Vpc"/>
-                                <label alignment="center" text="$0.00" id="tqE-s4-xl9">
-                                    <color key="textColor" red="0.14322025340625244" green="1" blue="0.017359335829717937" alpha="1" colorSpace="calibratedRGB"/>
+                                <label alignment="center" verticalAlignment="center" text="Force Touch" textAlignment="center" numberOfLines="3" id="nuI-hV-jWc"/>
+                                <label alignment="center" verticalAlignment="center" text="(press firmly)" textAlignment="center" numberOfLines="3" id="Pvc-KD-WKx"/>
+                                <label alignment="center" verticalAlignment="center" text="cool, right?" textAlignment="center" numberOfLines="3" id="YOY-tS-KSV">
+                                    <fontDescription key="font" type="system" pointSize="9"/>
                                 </label>
                             </items>
-                            <edgeInsets key="margins" left="0.0" right="0.0" top="10" bottom="0.0"/>
-                            <variation key="device=watch42mm" height="130">
-                                <edgeInsets key="margins" left="0.0" right="0.0" top="20" bottom="0.0"/>
-                            </variation>
                         </group>
-                        <group width="1" height="39" alignment="left" id="Bdi-qt-hK6">
+                        <group width="1" height="1" alignment="left" layout="vertical" id="rxy-2J-TQv" userLabel="Main">
                             <items>
-                                <button width="0.50000000000000011" alignment="center" title="Stop" enabled="NO" id="33J-uf-tB1">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="backgroundColor" red="0.52680638227513232" green="0.066758882029247124" blue="0.030856650092249478" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="20"/>
-                                    <connections>
-                                        <action selector="stopButtonTapped" destination="AgC-eL-Hgc" id="Fet-7D-Xvf"/>
-                                    </connections>
-                                </button>
-                                <button width="0.50000000000000011" alignment="left" title="Start" id="0Uj-Sr-iUt">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="backgroundColor" red="0.0011030352818218966" green="0.52680638227513232" blue="0.016519111441057926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="20"/>
-                                    <connections>
-                                        <action selector="startButtonTapped" destination="AgC-eL-Hgc" id="6Tt-ac-DGf"/>
-                                    </connections>
-                                </button>
+                                <group width="1" height="0.75" alignment="left" layout="vertical" id="DrQ-NK-irI" userLabel="Info">
+                                    <items>
+                                        <label alignment="left" text="Elapsed Time" id="fpx-Ld-IGY"/>
+                                        <label alignment="center" text="0:00:00" id="JhJ-Ki-msq">
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label alignment="left" text="Gross (lol) Profit" id="3Mn-bx-Vpc"/>
+                                        <label alignment="center" text="$0.00" id="tqE-s4-xl9">
+                                            <color key="textColor" red="0.14322025340625244" green="1" blue="0.017359335829717937" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="10" bottom="0.0"/>
+                                    <variation key="device=watch42mm">
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="20" bottom="0.0"/>
+                                    </variation>
+                                </group>
+                                <group width="1" height="0.25" alignment="left" verticalAlignment="bottom" id="Bdi-qt-hK6" userLabel="Buttons">
+                                    <items>
+                                        <button width="0.50000000000000011" height="1" alignment="center" title="Stop" enabled="NO" id="33J-uf-tB1">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.52680638227513232" green="0.066758882029247124" blue="0.030856650092249478" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="20"/>
+                                            <connections>
+                                                <action selector="stopButtonTapped" destination="AgC-eL-Hgc" id="Fet-7D-Xvf"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.50000000000000011" height="1" alignment="left" title="Start" id="0Uj-Sr-iUt">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.0011030352818218966" green="0.52680638227513232" blue="0.016519111441057926" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="20"/>
+                                            <connections>
+                                                <action selector="startButtonTapped" destination="AgC-eL-Hgc" id="6Tt-ac-DGf"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
                             </items>
-                        </group>
-                        <group width="1" height="145" alignment="left" verticalAlignment="bottom" id="Kk4-EP-yTX">
-                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <variation key="device=watch42mm" height="170"/>
                         </group>
                     </items>
                     <menu key="menu" id="cMy-q1-0lA">
@@ -63,12 +76,18 @@
                                     <action selector="setWorkHours" destination="AgC-eL-Hgc" id="nVD-4L-iHq"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Save 💩 Session" icon="accept" id="PfS-C5-I1g"/>
+                            <menuItem title="Save 💩 Session" icon="accept" id="PfS-C5-I1g">
+                                <connections>
+                                    <action selector="saveButtonTapped" destination="AgC-eL-Hgc" id="waK-cr-HWN"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
                         <outlet property="btnStart" destination="0Uj-Sr-iUt" id="7e8-z6-IqS"/>
                         <outlet property="btnStop" destination="33J-uf-tB1" id="sIR-hZ-sCD"/>
+                        <outlet property="grpMain" destination="rxy-2J-TQv" id="Wbb-yF-8ck"/>
+                        <outlet property="grpNoSettings" destination="OlU-4c-8GW" id="FBr-cQ-eBS"/>
                         <outlet property="lblGrossProfit" destination="tqE-s4-xl9" id="WBY-Sv-JdJ"/>
                         <outlet property="lblStopwatch" destination="JhJ-Ki-msq" id="dEJ-JP-PDr"/>
                     </connections>
@@ -207,7 +226,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="309" y="206"/>
+            <point key="canvasLocation" x="313" y="280"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">

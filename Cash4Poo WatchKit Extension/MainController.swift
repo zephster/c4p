@@ -91,10 +91,12 @@ class MainController: WKInterfaceController
     @IBOutlet weak var lblGrossProfit: WKInterfaceLabel!
     @IBOutlet weak var btnStart: WKInterfaceButton!
     @IBOutlet weak var btnStop: WKInterfaceButton!
-
+    @IBOutlet weak var btnSave: WKInterfaceButton!
+    @IBOutlet weak var grpNoSettings: WKInterfaceGroup!
+    @IBOutlet weak var grpMain: WKInterfaceGroup!
 
     var pooWatch: PooWatch?
-    var settings: NSUserDefaults?
+    var userData: NSUserDefaults?
     var stopShouldReset:Bool = false
 
 
@@ -103,7 +105,20 @@ class MainController: WKInterfaceController
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
 
-        self.settings = NSUserDefaults(suiteName: "group.cash4poo")
+        self.userData = NSUserDefaults(suiteName: "group.cash4poo")
+
+        // check settings
+        if (self.userData!.objectForKey("annualSalary") == nil ||
+            self.userData!.objectForKey("workHours") == nil)
+        {
+            self.grpNoSettings.setHidden(false)
+            self.grpMain.setHidden(true)
+        }
+        else
+        {
+            self.grpNoSettings.setHidden(true)
+            self.grpMain.setHidden(false)
+        }
     }
 
     override func didDeactivate() {
@@ -145,29 +160,55 @@ class MainController: WKInterfaceController
         }
     }
 
+    func savePoopSession()
+    {
+        if (self.session != nil)
+        {
+            println(self.session!)
+
+            var newHistory: [[String:String]]
+
+            if let history = self.userData?.arrayForKey("history") as? [[String:String]]
+            {
+                newHistory = history
+                newHistory.append(self.session!)
+
+                println(newHistory)
+            }
+            else
+            {
+                newHistory = [self.session!]
+            }
+
+            println(newHistory)
+
+            self.userData?.setObject([self.session!], forKey: "history")
+            self.userData?.synchronize()
+        }
+    }
+
+
+
     // PooWatch tick, update labels
     func pooTick(elapsedTime: NSTimeInterval, elapsedTimeString: String)
     {
-        let grossProfit:Double = self.calculateGrossProfit(elapsedTime)
-
+        let grossProfit = self.calculateGrossProfit(elapsedTime)
         let formatter = NSNumberFormatter()
+
         formatter.numberStyle = .CurrencyStyle
         formatter.maximumFractionDigits = 2
 
         self.lblStopwatch.setText(elapsedTimeString)
-        self.lblGrossProfit.setText("\(formatter.stringFromNumber(grossProfit)!)")
+        self.lblGrossProfit.setText("\(formatter.stringFromNumber(grossProfit!)!)")
+
+        self.session = ["\(elapsedTime)":"\(grossProfit)"]
     }
 
-    func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double
+    func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double?
     {
-        let annualSalary = self.settings?.integerForKey("annualSalary")
-        let workHours = self.settings?.integerForKey("workHours")
+        let annualSalary = self.userData?.integerForKey("annualSalary")
+        let workHours = self.userData?.integerForKey("workHours")
 
-        // todo: make this math better
-        // let salaryPerWeek = Double(annualSalary!) / 52
-        // let salaryPerHour = salaryPerWeek / Double(workHours!)
-        // let salaryPerMinute = salaryPerHour / 60
-        // let salaryPerSecond = salaryPerMinute / 60
         let salaryPerSecond = Double(annualSalary!) / 52 / Double(workHours!) / 60 / 60
         let currentGrossProfit = salaryPerSecond * round(Double(elapsedTime))
 

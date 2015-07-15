@@ -120,7 +120,7 @@
                                                     <group width="1" height="30" alignment="left" verticalAlignment="center" id="OUI-uJ-RI3">
                                                         <items>
                                                             <label alignment="left" verticalAlignment="center" text="00:00:00" id="02b-rE-juh"/>
-                                                            <label alignment="right" verticalAlignment="center" text="$77.77" id="zos-hG-oRf">
+                                                            <label alignment="right" verticalAlignment="center" text="$00.00" id="zos-hG-oRf">
                                                                 <color key="textColor" red="0.16862745098039217" green="0.97647058823529409" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
                                                         </items>

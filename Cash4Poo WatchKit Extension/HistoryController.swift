@@ -39,12 +39,20 @@ class HistoryController: WKInterfaceController
     {
         self.tblHistory.setNumberOfRows(self.pooHistory!.count, withRowType: "PooHistoryTableRowController")
 
-        for (index, pooItem) in enumerate(self.pooHistory!)
+        println(self.pooHistory!)
+
+        var index: Int = 0
+        for poo in self.pooHistory!
         {
             let row = self.tblHistory.rowControllerAtIndex(index) as! PooHistoryTableRowController
 
-            row.lblGrossProfit.setText("$69.69")
-            row.lblTime.setText("8:00:85")
+            for (time, money) in poo
+            {
+                row.lblTime.setText(time)
+                row.lblGrossProfit.setText(money)
+            }
+
+            index++;
         }
     }
 }

@@ -127,22 +127,7 @@ class MainController: WKInterfaceController
         super.didDeactivate()
     }
 
-
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        println("seguing")
-        if (segue.identifier == "History")
-        {
-            println("segueing to history")
-
-            if let history = self.userData?.arrayForKey("history") as? [[String:String]]
-            {
-                println(history)
-                var historyVC = (segue.destinationViewController as? HistoryController)
-                historyVC?.pooHistory = history
-            }
-        }
-    }
+    // todo, use data from this controller from historycontroller
 
 
 
@@ -213,10 +198,12 @@ class MainController: WKInterfaceController
         formatter.numberStyle = .CurrencyStyle
         formatter.maximumFractionDigits = 2
 
-        self.lblStopwatch.setText(elapsedTimeString)
-        self.lblGrossProfit.setText("\(formatter.stringFromNumber(grossProfit!)!)")
+        let grossProfitString = formatter.stringFromNumber(grossProfit!)!
 
-        self.session = ["\(elapsedTime)":"\(grossProfit!)"]
+        self.lblStopwatch.setText(elapsedTimeString)
+        self.lblGrossProfit.setText("\(grossProfitString)")
+
+        self.session = ["\(elapsedTimeString)":"\(grossProfitString)"]
     }
 
     func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double?

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA066DE91B560208001753D3 /* PooHistoryTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */; };
 		CA257EF61B47266500376B73 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA257EF51B47266500376B73 /* SettingsViewController.swift */; };
+		CA3C85811B55F42700C51782 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C85801B55F42700C51782 /* HistoryController.swift */; };
 		CA7D16081B44D3FD0066B4D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D16071B44D3FD0066B4D1 /* AppDelegate.swift */; };
 		CA7D160A1B44D3FD0066B4D1 /* PooWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D16091B44D3FD0066B4D1 /* PooWatchViewController.swift */; };
 		CA7D160D1B44D3FD0066B4D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7D160B1B44D3FD0066B4D1 /* Main.storyboard */; };
@@ -73,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		CA257EF51B47266500376B73 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PooHistoryTableRowController.swift; path = "../Cash4Poo WatchKit App/PooHistoryTableRowController.swift"; sourceTree = "<group>"; };
+		CA3C85801B55F42700C51782 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		CA7D16021B44D3FD0066B4D1 /* Cash4Poo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cash4Poo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7D16061B44D3FD0066B4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA7D16071B44D3FD0066B4D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 				CAEDE5751B44DC9900682F0B /* MainController.swift */,
 				CAAEE74A1B483C0300B524E5 /* SettingController.swift */,
 				CAEDE5771B44DC9900682F0B /* GlanceController.swift */,
+				CA3C85801B55F42700C51782 /* HistoryController.swift */,
+				CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */,
 				CAEDE5791B44DC9900682F0B /* Images.xcassets */,
 				CAEDE5731B44DC9900682F0B /* Supporting Files */,
 			);
@@ -412,6 +418,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA3C85811B55F42700C51782 /* HistoryController.swift in Sources */,
+				CA066DE91B560208001753D3 /* PooHistoryTableRowController.swift in Sources */,
 				CAAEE74B1B483C0300B524E5 /* SettingController.swift in Sources */,
 				CAEDE5761B44DC9900682F0B /* MainController.swift in Sources */,
 				CAEDE5781B44DC9900682F0B /* GlanceController.swift in Sources */,

@@ -128,6 +128,26 @@ class MainController: WKInterfaceController
     }
 
 
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        println("seguing")
+        if (segue.identifier == "History")
+        {
+            println("segueing to history")
+
+            if let history = self.userData?.arrayForKey("history") as? [[String:String]]
+            {
+                println(history)
+                var historyVC = (segue.destinationViewController as? HistoryController)
+                historyVC?.pooHistory = history
+            }
+        }
+    }
+
+
+
+
+
     func startPooping()
     {
         // todo: dont reset timer state when stopping then re-starting
@@ -175,13 +195,6 @@ class MainController: WKInterfaceController
             else
             {
                 newHistory = [self.session!]
-            }
-
-            println("newHistory")
-
-            for item in newHistory
-            {
-                println(item)
             }
 
             self.userData?.setObject(newHistory, forKey: "history")

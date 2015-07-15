@@ -90,10 +90,60 @@
                         <outlet property="grpNoSettings" destination="OlU-4c-8GW" id="FBr-cQ-eBS"/>
                         <outlet property="lblGrossProfit" destination="tqE-s4-xl9" id="WBY-Sv-JdJ"/>
                         <outlet property="lblStopwatch" destination="JhJ-Ki-msq" id="dEJ-JP-PDr"/>
+                        <segue destination="vWO-i7-YYj" kind="relationship" relationship="nextPage" id="HG6-4n-RL4"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="164" y="280"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="0zc-Ek-ykt">
+            <objects>
+                <controller identifier="History" title="History" id="vWO-i7-YYj" customClass="HistoryController" customModule="Cash4Poo_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" hidden="YES" layout="vertical" id="Bgr-4R-jm9" userLabel="No History">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="No History" numberOfLines="10" id="uMh-gF-cCm">
+                                    <color key="textColor" red="0.1417263195" green="0.75978835980000003" blue="0.08333166099" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="😭" textAlignment="center" numberOfLines="3" id="0r1-EC-uwM"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="dXV-TH-Edq" userLabel="History">
+                            <items>
+                                <table alignment="left" id="ZDy-cY-ePh">
+                                    <items>
+                                        <tableRow identifier="PooHistoryTableRowController" id="oAv-Bc-km8" customClass="PooHistoryTableRowController" customModule="Cash4Poo_WatchKit_Extension">
+                                            <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="BbZ-ap-ed9">
+                                                <items>
+                                                    <group width="1" height="30" alignment="left" verticalAlignment="center" id="OUI-uJ-RI3">
+                                                        <items>
+                                                            <label alignment="left" verticalAlignment="center" text="00:00:00" id="02b-rE-juh"/>
+                                                            <label alignment="right" verticalAlignment="center" text="$77.77" id="zos-hG-oRf">
+                                                                <color key="textColor" red="0.16862745098039217" green="0.97647058823529409" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="lblGrossProfit" destination="zos-hG-oRf" id="OCD-dn-mrw"/>
+                                                <outlet property="lblTime" destination="02b-rE-juh" id="RGk-uE-yiR"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="grpNoHistory" destination="Bgr-4R-jm9" id="dIU-r4-HqC"/>
+                        <outlet property="tblHistory" destination="ZDy-cY-ePh" id="w6n-YL-EcS"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="354" y="280"/>
         </scene>
         <!--Cancel-->
         <scene sceneID="DSg-mG-S7n">
@@ -226,7 +276,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="313" y="280"/>
+            <point key="canvasLocation" x="164" y="500"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">

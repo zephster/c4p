@@ -17,6 +17,30 @@ class HistoryController: WKInterfaceController
     var userData: NSUserDefaults?
 
 
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
+    {
+        println("segueing")
+        println(rowIndex)
+
+        if (segueIdentifier == "historyDetailSegue")
+        {
+            println("seguing to historyDetailSegue with self.pooHistory")
+
+            // the dumbest way to do something, ever
+            for (index, poo) in enumerate(self.pooHistory!)
+            {
+                if index == rowIndex
+                {
+                    return poo
+                }
+            }
+        }
+
+        return nil
+    }
+
+
+    // todo: replace this with data from main controller
     override func willActivate()
     {
         self.userData = NSUserDefaults(suiteName: "group.cash4poo")
@@ -39,8 +63,7 @@ class HistoryController: WKInterfaceController
     {
         self.tblHistory.setNumberOfRows(self.pooHistory!.count, withRowType: "PooHistoryTableRowController")
 
-        var index: Int = 0
-        for poo in self.pooHistory!
+        for (index, poo) in enumerate(self.pooHistory!)
         {
             let row = self.tblHistory.rowControllerAtIndex(index) as! PooHistoryTableRowController
 
@@ -49,8 +72,6 @@ class HistoryController: WKInterfaceController
                 row.lblTime.setText(time)
                 row.lblGrossProfit.setText(money)
             }
-
-            index++;
         }
     }
 }

@@ -99,7 +99,7 @@
         <!--History-->
         <scene sceneID="0zc-Ek-ykt">
             <objects>
-                <controller identifier="History" title="History" id="vWO-i7-YYj" customClass="HistoryController" customModule="Cash4Poo_WatchKit_Extension">
+                <controller identifier="History" title="💩📅" id="vWO-i7-YYj" userLabel="History" customClass="HistoryController" customModule="Cash4Poo_WatchKit_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" hidden="YES" layout="vertical" id="Bgr-4R-jm9" userLabel="No History">
                             <items>
@@ -119,8 +119,10 @@
                                                 <items>
                                                     <group width="1" height="30" alignment="left" verticalAlignment="center" id="OUI-uJ-RI3">
                                                         <items>
-                                                            <label alignment="left" verticalAlignment="center" text="00:00:00" id="02b-rE-juh"/>
-                                                            <label alignment="right" verticalAlignment="center" text="$00.00" id="zos-hG-oRf">
+                                                            <label width="68" height="20" alignment="left" verticalAlignment="center" text="00:00:00" id="02b-rE-juh">
+                                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                            </label>
+                                                            <label width="55" alignment="right" verticalAlignment="center" text="$00.00" id="zos-hG-oRf">
                                                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
                                                         </items>
@@ -130,6 +132,7 @@
                                             <connections>
                                                 <outlet property="lblGrossProfit" destination="zos-hG-oRf" id="OCD-dn-mrw"/>
                                                 <outlet property="lblTime" destination="02b-rE-juh" id="RGk-uE-yiR"/>
+                                                <segue destination="atn-9g-ZSE" kind="modal" identifier="historyDetailSegue" id="6RR-ZZ-vaJ"/>
                                             </connections>
                                         </tableRow>
                                     </items>
@@ -145,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="354" y="280"/>
         </scene>
-        <!--Cancel-->
+        <!--NumberInput-->
         <scene sceneID="DSg-mG-S7n">
             <objects>
-                <controller identifier="WatchSettings" title="Cancel" id="faP-eP-Gng" customClass="SettingController" customModule="Cash4Poo_WatchKit_Extension">
+                <controller identifier="WatchSettings" title="Cancel" id="faP-eP-Gng" userLabel="NumberInput" customClass="SettingController" customModule="Cash4Poo_WatchKit_Extension">
                     <items>
                         <group width="1" height="0.14999999999999999" alignment="left" id="d8F-rb-gel">
                             <items>
@@ -281,13 +284,13 @@
         <!--HistoryDetail-->
         <scene sceneID="6FN-3Q-5qa">
             <objects>
-                <controller identifier="HistoryDetail" id="atn-9g-ZSE" customClass="HistoryDetailController" customModule="Cash4Poo_WatchKit_Extension">
+                <controller identifier="HistoryDetail" title="Close" id="atn-9g-ZSE" userLabel="HistoryDetail" customClass="HistoryDetailController" customModule="Cash4Poo_WatchKit_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="xPQ-08-zYW">
                             <items>
                                 <group width="1" height="0.75" alignment="left" layout="vertical" id="Rxt-Os-gEu" userLabel="Details">
                                     <items>
-                                        <group width="1" height="0.25" alignment="left" id="B3y-QW-H1J" userLabel="DataRow">
+                                        <group width="1" height="0.20000000000000001" alignment="left" id="B3y-QW-H1J" userLabel="DataRow">
                                             <items>
                                                 <label alignment="left" text="Date" id="hHa-Ly-f17"/>
                                                 <label alignment="right" text="Jan 01 2015" id="LXB-PC-cnK">
@@ -295,7 +298,7 @@
                                                 </label>
                                             </items>
                                         </group>
-                                        <group width="1" height="0.25" alignment="left" id="ZfX-xt-s1K" userLabel="DataRow">
+                                        <group width="1" height="0.20000000000000001" alignment="left" id="ZfX-xt-s1K" userLabel="DataRow">
                                             <items>
                                                 <label alignment="left" text="Start" id="ug1-21-Qbj"/>
                                                 <label alignment="right" text="13:37:42" id="NHn-jj-oQl">
@@ -303,7 +306,7 @@
                                                 </label>
                                             </items>
                                         </group>
-                                        <group width="1" height="0.25" alignment="left" id="Xwb-eM-pK8" userLabel="DataRow">
+                                        <group width="1" height="0.20000000000000001" alignment="left" id="Xwb-eM-pK8" userLabel="DataRow">
                                             <items>
                                                 <label alignment="left" text="Stop" id="5AB-Ar-JpQ"/>
                                                 <label alignment="right" text="8:00:85" id="Ccw-8X-HEx">
@@ -311,7 +314,15 @@
                                                 </label>
                                             </items>
                                         </group>
-                                        <group width="1" height="0.25" alignment="left" id="SNn-yA-Xdg" userLabel="DataRow">
+                                        <group width="1" height="0.20000000000000001" alignment="left" id="dd1-TO-3ao" userLabel="DataRow">
+                                            <items>
+                                                <label alignment="left" text="Time" id="aaB-hh-a2Z"/>
+                                                <label alignment="right" text="0:05:50" id="UNy-9G-SvZ">
+                                                    <color key="textColor" red="0.048056512750000002" green="0.70442299109999995" blue="0.89715608469999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="0.20000000000000001" alignment="left" id="SNn-yA-Xdg" userLabel="DataRow">
                                             <items>
                                                 <label alignment="left" text="Cash" id="nmr-ef-nbi"/>
                                                 <label alignment="right" text="$69.69" id="oZz-Lq-Qqt">
@@ -332,9 +343,17 @@
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="btnDelete" destination="8d3-5I-CWv" id="zZf-8l-Dsq"/>
+                        <outlet property="lblCash" destination="oZz-Lq-Qqt" id="KOI-EF-jU0"/>
+                        <outlet property="lblDate" destination="LXB-PC-cnK" id="awV-Ky-BXE"/>
+                        <outlet property="lblStart" destination="NHn-jj-oQl" id="E7F-bJ-noo"/>
+                        <outlet property="lblStop" destination="Ccw-8X-HEx" id="XEC-GH-1Hl"/>
+                        <outlet property="lblTime" destination="UNy-9G-SvZ" id="cm9-jP-fiE"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="354" y="500"/>
+            <point key="canvasLocation" x="354" y="547"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">

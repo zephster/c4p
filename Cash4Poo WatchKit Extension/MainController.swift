@@ -203,6 +203,7 @@ class MainController: WKInterfaceController
         self.lblStopwatch.setText(elapsedTimeString)
         self.lblGrossProfit.setText("\(grossProfitString)")
 
+        // todo: add date and time of start and stop
         self.session = ["\(elapsedTimeString)":"\(grossProfitString)"]
     }
 

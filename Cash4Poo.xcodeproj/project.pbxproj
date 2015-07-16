@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA066DE91B560208001753D3 /* PooHistoryTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */; };
+		CA066DEB1B574160001753D3 /* HistoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA066DEA1B574160001753D3 /* HistoryDetailController.swift */; };
 		CA257EF61B47266500376B73 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA257EF51B47266500376B73 /* SettingsViewController.swift */; };
 		CA3C85811B55F42700C51782 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C85801B55F42700C51782 /* HistoryController.swift */; };
 		CA7D16081B44D3FD0066B4D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D16071B44D3FD0066B4D1 /* AppDelegate.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CA066DEA1B574160001753D3 /* HistoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailController.swift; sourceTree = "<group>"; };
 		CA257EF51B47266500376B73 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PooHistoryTableRowController.swift; path = "../Cash4Poo WatchKit App/PooHistoryTableRowController.swift"; sourceTree = "<group>"; };
 		CA3C85801B55F42700C51782 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				CAAEE74A1B483C0300B524E5 /* SettingController.swift */,
 				CAEDE5771B44DC9900682F0B /* GlanceController.swift */,
 				CA3C85801B55F42700C51782 /* HistoryController.swift */,
+				CA066DEA1B574160001753D3 /* HistoryDetailController.swift */,
 				CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */,
 				CAEDE5791B44DC9900682F0B /* Images.xcassets */,
 				CAEDE5731B44DC9900682F0B /* Supporting Files */,
@@ -423,6 +426,7 @@
 				CAAEE74B1B483C0300B524E5 /* SettingController.swift in Sources */,
 				CAEDE5761B44DC9900682F0B /* MainController.swift in Sources */,
 				CAEDE5781B44DC9900682F0B /* GlanceController.swift in Sources */,
+				CA066DEB1B574160001753D3 /* HistoryDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

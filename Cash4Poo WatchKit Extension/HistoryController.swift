@@ -39,8 +39,6 @@ class HistoryController: WKInterfaceController
     {
         self.tblHistory.setNumberOfRows(self.pooHistory!.count, withRowType: "PooHistoryTableRowController")
 
-        println(self.pooHistory!)
-
         var index: Int = 0
         for poo in self.pooHistory!
         {

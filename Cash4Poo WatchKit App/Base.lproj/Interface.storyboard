@@ -121,7 +121,7 @@
                                                         <items>
                                                             <label alignment="left" verticalAlignment="center" text="00:00:00" id="02b-rE-juh"/>
                                                             <label alignment="right" verticalAlignment="center" text="$00.00" id="zos-hG-oRf">
-                                                                <color key="textColor" red="0.16862745098039217" green="0.97647058823529409" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
                                                         </items>
                                                     </group>
@@ -277,6 +277,64 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="164" y="500"/>
+        </scene>
+        <!--HistoryDetail-->
+        <scene sceneID="6FN-3Q-5qa">
+            <objects>
+                <controller identifier="HistoryDetail" id="atn-9g-ZSE" customClass="HistoryDetailController" customModule="Cash4Poo_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="xPQ-08-zYW">
+                            <items>
+                                <group width="1" height="0.75" alignment="left" layout="vertical" id="Rxt-Os-gEu" userLabel="Details">
+                                    <items>
+                                        <group width="1" height="0.25" alignment="left" id="B3y-QW-H1J" userLabel="DataRow">
+                                            <items>
+                                                <label alignment="left" text="Date" id="hHa-Ly-f17"/>
+                                                <label alignment="right" text="Jan 01 2015" id="LXB-PC-cnK">
+                                                    <color key="textColor" red="0.048056512752355701" green="0.70442299109233741" blue="0.89715608465608465" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="0.25" alignment="left" id="ZfX-xt-s1K" userLabel="DataRow">
+                                            <items>
+                                                <label alignment="left" text="Start" id="ug1-21-Qbj"/>
+                                                <label alignment="right" text="13:37:42" id="NHn-jj-oQl">
+                                                    <color key="textColor" red="0.048056512750000002" green="0.70442299109999995" blue="0.89715608469999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="0.25" alignment="left" id="Xwb-eM-pK8" userLabel="DataRow">
+                                            <items>
+                                                <label alignment="left" text="Stop" id="5AB-Ar-JpQ"/>
+                                                <label alignment="right" text="8:00:85" id="Ccw-8X-HEx">
+                                                    <color key="textColor" red="0.048056512750000002" green="0.70442299109999995" blue="0.89715608469999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="0.25" alignment="left" id="SNn-yA-Xdg" userLabel="DataRow">
+                                            <items>
+                                                <label alignment="left" text="Cash" id="nmr-ef-nbi"/>
+                                                <label alignment="right" text="$69.69" id="oZz-Lq-Qqt">
+                                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" height="0.25" alignment="left" verticalAlignment="bottom" id="wrI-h9-aAh" userLabel="Delete">
+                                    <items>
+                                        <button width="1" alignment="left" title="Delete" id="8d3-5I-CWv">
+                                            <color key="backgroundColor" red="0.36078431372549019" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="20"/>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="354" y="500"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">

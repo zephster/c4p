@@ -324,13 +324,14 @@
                                         </group>
                                         <group width="1" height="0.20000000000000001" alignment="left" id="SNn-yA-Xdg" userLabel="DataRow">
                                             <items>
-                                                <label alignment="left" text="Cash" id="nmr-ef-nbi"/>
+                                                <label alignment="left" text="Profit" id="nmr-ef-nbi"/>
                                                 <label alignment="right" text="$69.69" id="oZz-Lq-Qqt">
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </items>
                                         </group>
                                     </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="0.0"/>
                                 </group>
                                 <group width="1" height="0.25" alignment="left" verticalAlignment="bottom" id="wrI-h9-aAh" userLabel="Delete">
                                     <items>
@@ -345,8 +346,8 @@
                     </items>
                     <connections>
                         <outlet property="btnDelete" destination="8d3-5I-CWv" id="zZf-8l-Dsq"/>
-                        <outlet property="lblCash" destination="oZz-Lq-Qqt" id="KOI-EF-jU0"/>
                         <outlet property="lblDate" destination="LXB-PC-cnK" id="awV-Ky-BXE"/>
+                        <outlet property="lblProfit" destination="oZz-Lq-Qqt" id="Jvc-YS-R0f"/>
                         <outlet property="lblStart" destination="NHn-jj-oQl" id="E7F-bJ-noo"/>
                         <outlet property="lblStop" destination="Ccw-8X-HEx" id="XEC-GH-1Hl"/>
                         <outlet property="lblTime" destination="UNy-9G-SvZ" id="cm9-jP-fiE"/>

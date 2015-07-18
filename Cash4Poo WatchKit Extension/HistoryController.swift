@@ -15,8 +15,8 @@ class HistoryController: WKInterfaceController
 
     var pooHistory: [[String:String]]?
     var userData: NSUserDefaults?
-    var df = NSDateFormatter()
-    var nf = NSNumberFormatter()
+    let df = NSDateFormatter()
+    let nf = NSNumberFormatter()
 
 
     // seguing to details view from tapped history row

@@ -33,7 +33,9 @@ class PooWatch : NSObject
             return self.timeIntervalToString(self.elapsedTime) ?? "0:00:00"
         }
     }
-    
+
+    // todo: use common class code
+    // todo: also, make a common code class
     private func timeIntervalToString(interval: NSTimeInterval) -> String?
     {
         let dcf = NSDateComponentsFormatter()
@@ -102,7 +104,7 @@ class MainController: WKInterfaceController
     var userData: NSUserDefaults?
     var stopShouldReset:Bool = false
     var session: [String:String]?
-    var nf = NSNumberFormatter()
+    let nf = NSNumberFormatter()
 
 
     override func willActivate()

@@ -122,7 +122,7 @@
                                                             <label width="68" height="20" alignment="left" verticalAlignment="center" text="00:00:00" id="02b-rE-juh">
                                                                 <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                             </label>
-                                                            <label width="55" alignment="right" verticalAlignment="center" text="$00.00" id="zos-hG-oRf">
+                                                            <label alignment="right" verticalAlignment="center" text="$00.00" textAlignment="right" id="zos-hG-oRf">
                                                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
                                                         </items>

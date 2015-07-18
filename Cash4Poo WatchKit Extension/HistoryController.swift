@@ -15,8 +15,11 @@ class HistoryController: WKInterfaceController
 
     var pooHistory: [[String:String]]?
     var userData: NSUserDefaults?
+    var df = NSDateFormatter()
+    var nf = NSNumberFormatter()
 
 
+    // seguing to details view from tapped history row
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         println("segueing")
@@ -50,6 +53,11 @@ class HistoryController: WKInterfaceController
             self.pooHistory = history
             self.grpNoHistory.setHidden(true)
 
+            self.df.dateFormat = "mm:ss"
+
+            self.nf.numberStyle = .CurrencyStyle
+            self.nf.maximumFractionDigits = 2
+
             self.populatePooHistory()
         }
         else
@@ -67,11 +75,15 @@ class HistoryController: WKInterfaceController
         {
             let row = self.tblHistory.rowControllerAtIndex(index) as! PooHistoryTableRowController
 
-            for (time, money) in poo
-            {
-                row.lblTime.setText(time)
-                row.lblGrossProfit.setText(money)
-            }
+            // money string
+            let grossProfit:Double = (poo["grossProfit"]! as NSString).doubleValue
+
+            // elapsed time string
+            let pooTime = NSDate(timeIntervalSince1970: (poo["elapsedTime"]! as NSString).doubleValue)
+            let pooTimeString = self.df.stringFromDate(pooTime)
+
+            row.lblGrossProfit.setText(self.nf.stringFromNumber(grossProfit))
+            row.lblTime.setText(pooTimeString)
         }
     }
 }

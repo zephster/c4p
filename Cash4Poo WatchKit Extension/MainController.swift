@@ -11,7 +11,7 @@ import WatchKit
 class PooWatch : NSObject
 {
     private var timer: NSTimer?
-    private var startTime: NSDate?
+    private var startTime: NSTimeInterval!
     private var ticker: (NSTimeInterval, String) -> Void
 
     init(tickFunction tick: (NSTimeInterval, String) -> Void)
@@ -21,13 +21,16 @@ class PooWatch : NSObject
 
     var elapsedTime: NSTimeInterval {
         get {
-            return NSDate().timeIntervalSinceDate(self.startTime ?? NSDate())
+            // couldnt i just subtract starttime from current timestamp?
+            // todo: do that
+            let date = NSDate(timeIntervalSince1970: self.startTime ?? NSDate().timeIntervalSince1970)
+            return NSDate().timeIntervalSinceDate(date)
         }
     }
     
     var elapsedTimeString: String {
         get {
-            return self.timeIntervalToString(self.elapsedTime) ?? "00:00:00"
+            return self.timeIntervalToString(self.elapsedTime) ?? "0:00:00"
         }
     }
     
@@ -46,6 +49,8 @@ class PooWatch : NSObject
 
         if (self.timer?.valid != true)
         {
+            self.startTime = NSDate().timeIntervalSince1970
+
             self.timer = NSTimer.scheduledTimerWithTimeInterval(
                 1.0,
                 target: self,
@@ -63,11 +68,9 @@ class PooWatch : NSObject
     
     func reset()
     {
-        // reset timer
+        // reset
         self.timer = nil
-        
-        // reset startTime to 0:00:00
-        self.startTime = NSDate()
+        self.startTime = nil
 
         // update UI with a tick
         self.pooTick()
@@ -99,6 +102,7 @@ class MainController: WKInterfaceController
     var userData: NSUserDefaults?
     var stopShouldReset:Bool = false
     var session: [String:String]?
+    var nf = NSNumberFormatter()
 
 
     override func willActivate()
@@ -112,13 +116,18 @@ class MainController: WKInterfaceController
         if (self.userData!.objectForKey("annualSalary") == nil ||
             self.userData!.objectForKey("workHours") == nil)
         {
+            // no settings found, show no settings screen
             self.grpNoSettings.setHidden(false)
             self.grpMain.setHidden(true)
         }
         else
         {
+            // all ready!
             self.grpNoSettings.setHidden(true)
             self.grpMain.setHidden(false)
+
+            self.nf.numberStyle = .CurrencyStyle
+            self.nf.maximumFractionDigits = 2
         }
     }
 
@@ -193,18 +202,17 @@ class MainController: WKInterfaceController
     func pooTick(elapsedTime: NSTimeInterval, elapsedTimeString: String)
     {
         let grossProfit = self.calculateGrossProfit(elapsedTime)
-        let formatter = NSNumberFormatter()
-
-        formatter.numberStyle = .CurrencyStyle
-        formatter.maximumFractionDigits = 2
-
-        let grossProfitString = formatter.stringFromNumber(grossProfit!)!
+        let grossProfitString = self.nf.stringFromNumber(grossProfit!)!
 
         self.lblStopwatch.setText(elapsedTimeString)
-        self.lblGrossProfit.setText("\(grossProfitString)")
+        self.lblGrossProfit.setText(grossProfitString)
 
-        // todo: add date and time of start and stop
-        self.session = ["\(elapsedTimeString)":"\(grossProfitString)"]
+        self.session = [
+            "elapsedTime": "\(elapsedTime)",
+            "grossProfit": "\(grossProfit!)",
+            "startTime"  : "\(self.pooWatch!.startTime)",
+            "stopTime"   : "\(NSDate().timeIntervalSince1970)"
+        ]
     }
 
     func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double?
@@ -234,6 +242,7 @@ class MainController: WKInterfaceController
     {
         self.stopPooping()
     }
+
     @IBAction func saveButtonTapped() {
         self.savePoopSession()
     }

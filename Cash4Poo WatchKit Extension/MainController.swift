@@ -101,10 +101,11 @@ class MainController: WKInterfaceController
     @IBOutlet weak var grpMain: WKInterfaceGroup!
 
     var pooWatch: PooWatch?
-    var userData: NSUserDefaults?
     var stopShouldReset:Bool = false
     var session: [String:String]?
-    let nf = NSNumberFormatter()
+
+    // test - new shiz
+    let c4p:C4PCommon = C4PCommon.sharedInstance
 
 
     override func willActivate()
@@ -112,11 +113,9 @@ class MainController: WKInterfaceController
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
 
-        self.userData = NSUserDefaults(suiteName: "group.cash4poo")
-
         // check settings
-        if (self.userData!.objectForKey("annualSalary") == nil ||
-            self.userData!.objectForKey("workHours") == nil)
+        if (self.c4p.userData!.objectForKey("annualSalary") == nil ||
+            self.c4p.userData!.objectForKey("workHours") == nil)
         {
             // no settings found, show no settings screen
             self.grpNoSettings.setHidden(false)
@@ -127,9 +126,6 @@ class MainController: WKInterfaceController
             // all ready!
             self.grpNoSettings.setHidden(true)
             self.grpMain.setHidden(false)
-
-            self.nf.numberStyle = .CurrencyStyle
-            self.nf.maximumFractionDigits = 2
         }
     }
 
@@ -183,7 +179,7 @@ class MainController: WKInterfaceController
         {
             var newHistory: [[String:String]]
 
-            if let history = self.userData?.arrayForKey("history") as? [[String:String]]
+            if let history = self.c4p.userData!.arrayForKey("history") as? [[String:String]]
             {
                 newHistory = history
                 newHistory.append(self.session!)
@@ -193,8 +189,8 @@ class MainController: WKInterfaceController
                 newHistory = [self.session!]
             }
 
-            self.userData?.setObject(newHistory, forKey: "history")
-            self.userData?.synchronize()
+            self.c4p.userData!.setObject(newHistory, forKey: "history")
+            self.c4p.userData!.synchronize()
         }
     }
 
@@ -204,7 +200,7 @@ class MainController: WKInterfaceController
     func pooTick(elapsedTime: NSTimeInterval, elapsedTimeString: String)
     {
         let grossProfit = self.calculateGrossProfit(elapsedTime)
-        let grossProfitString = self.nf.stringFromNumber(grossProfit!)!
+        let grossProfitString = c4p.numberFormatter.stringFromNumber(grossProfit!)!
 
         self.lblStopwatch.setText(elapsedTimeString)
         self.lblGrossProfit.setText(grossProfitString)
@@ -219,10 +215,10 @@ class MainController: WKInterfaceController
 
     func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double?
     {
-        let annualSalary = self.userData?.integerForKey("annualSalary")
-        let workHours = self.userData?.integerForKey("workHours")
+        let annualSalary = self.c4p.userData!.integerForKey("annualSalary")
+        let workHours = self.c4p.userData!.integerForKey("workHours")
 
-        let salaryPerSecond = Double(annualSalary!) / 52 / Double(workHours!) / 60 / 60
+        let salaryPerSecond = Double(annualSalary) / 52 / Double(workHours) / 60 / 60
         let currentGrossProfit = salaryPerSecond * round(Double(elapsedTime))
 
         return currentGrossProfit

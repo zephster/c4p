@@ -15,6 +15,10 @@ class C4PCommon
     let numberFormatter       = NSNumberFormatter()
     let dateFormatter         = NSDateFormatter()
 
+    var annualSalary:Int?
+    var workHours:Int?
+    var pooHistory: [[String:String]]?
+
     var userData: NSUserDefaults?
 
 
@@ -29,14 +33,19 @@ class C4PCommon
 
     func loadData()
     {
-        // todo: dont have a global userData,
-        // juist load settings here and set them to instance properties
         self.userData = NSUserDefaults(suiteName: self.appGroup)
+
+        self.annualSalary = self.userData?.integerForKey("annualSalary")
+        self.workHours = self.userData?.integerForKey("workHours")
+        self.pooHistory = self.userData?.arrayForKey("history") as? [[String:String]]
     }
 
-    func saveUserDefaults()
+    func saveData()
     {
-
+        self.userData?.setObject(self.annualSalary, forKey: "annualSalary")
+        self.userData?.setObject(self.workHours, forKey: "workHours")
+        self.userData?.setObject(self.pooHistory, forKey: "history")
+        self.userData?.synchronize()
     }
 
     private init()

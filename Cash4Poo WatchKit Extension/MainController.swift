@@ -104,7 +104,6 @@ class MainController: WKInterfaceController
     var stopShouldReset:Bool = false
     var session: [String:String]?
 
-    // test - new shiz
     let c4p:C4PCommon = C4PCommon.sharedInstance
 
 
@@ -114,18 +113,18 @@ class MainController: WKInterfaceController
         super.willActivate()
 
         // check settings
-        if (self.c4p.userData!.objectForKey("annualSalary") == nil ||
-            self.c4p.userData!.objectForKey("workHours") == nil)
-        {
-            // no settings found, show no settings screen
-            self.grpNoSettings.setHidden(false)
-            self.grpMain.setHidden(true)
-        }
-        else
+        if let annualSalary = self.c4p.annualSalary,
+           let workHours = self.c4p.workHours
         {
             // all ready!
             self.grpNoSettings.setHidden(true)
             self.grpMain.setHidden(false)
+        }
+        else
+        {
+            // no settings found, show no settings screen
+            self.grpNoSettings.setHidden(false)
+            self.grpMain.setHidden(true)
         }
     }
 
@@ -133,10 +132,6 @@ class MainController: WKInterfaceController
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
-    // todo, use data from this controller from historycontroller
-
-
 
 
 
@@ -179,7 +174,7 @@ class MainController: WKInterfaceController
         {
             var newHistory: [[String:String]]
 
-            if let history = self.c4p.userData!.arrayForKey("history") as? [[String:String]]
+            if let history = self.c4p.pooHistory
             {
                 newHistory = history
                 newHistory.append(self.session!)
@@ -189,8 +184,8 @@ class MainController: WKInterfaceController
                 newHistory = [self.session!]
             }
 
-            self.c4p.userData!.setObject(newHistory, forKey: "history")
-            self.c4p.userData!.synchronize()
+            self.c4p.pooHistory = newHistory
+            self.c4p.saveData()
         }
     }
 
@@ -215,13 +210,16 @@ class MainController: WKInterfaceController
 
     func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double?
     {
-        let annualSalary = self.c4p.userData!.integerForKey("annualSalary")
-        let workHours = self.c4p.userData!.integerForKey("workHours")
+        if let annualSalary = self.c4p.annualSalary,
+            let workHours = self.c4p.workHours
+        {
+            let salaryPerSecond = Double(annualSalary) / 52 / Double(workHours) / 60 / 60
+            let currentGrossProfit = salaryPerSecond * round(Double(elapsedTime))
 
-        let salaryPerSecond = Double(annualSalary) / 52 / Double(workHours) / 60 / 60
-        let currentGrossProfit = salaryPerSecond * round(Double(elapsedTime))
+            return currentGrossProfit
+        }
 
-        return currentGrossProfit
+        return nil
     }
 
 

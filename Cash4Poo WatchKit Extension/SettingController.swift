@@ -30,21 +30,30 @@ class SettingController: WKInterfaceController
 
     var inputValue:Int = 0
     var settingType:String?
-    var userData:NSUserDefaults?
+
+    let c4p = C4PCommon.sharedInstance
 
 
     // load up user data, set label
     override func awakeWithContext(context: AnyObject?)
     {
         super.awakeWithContext(context)
-
-        self.userData = NSUserDefaults(suiteName: "group.cash4poo")
         self.settingType = context as? String
+        var userData: Int?
+
+        if (self.settingType == "annualSalary")
+        {
+            userData = self.c4p.annualSalary
+        }
+        else if (self.settingType == "workHours")
+        {
+            userData = self.c4p.workHours
+        }
 
         // load setting and populate label
-        if let userDataValue = self.userData?.integerForKey(self.settingType!)
+        if let data = userData
         {
-            self.setValue(userDataValue, updateLabelWithValue: true)
+            self.setValue(data, updateLabelWithValue: true)
         }
         else
         {
@@ -91,10 +100,9 @@ class SettingController: WKInterfaceController
             switch self.settingType!
             {
                 case "annualSalary":
-                    let formatter = NSNumberFormatter()
-                    formatter.numberStyle = .CurrencyStyle
-                    formatter.maximumFractionDigits = 0
-                    labelText = formatter.stringFromNumber(self.inputValue)
+                    self.c4p.defaultFormatters()
+                    self.c4p.numberFormatter.maximumFractionDigits = 0
+                    labelText = self.c4p.numberFormatter.stringFromNumber(self.inputValue)
                 case "workHours":
                     fallthrough // basically, use default
                 default:
@@ -146,8 +154,16 @@ class SettingController: WKInterfaceController
     // UI actions
     @IBAction func saveButtonTap()
     {
-        self.userData!.setInteger(self.inputValue, forKey: self.settingType!)
-        self.userData!.synchronize()
+        if (self.settingType == "annualSalary")
+        {
+            self.c4p.annualSalary = self.inputValue
+        }
+        else if (self.settingType == "workHours")
+        {
+            self.c4p.workHours = self.inputValue
+        }
+
+        self.c4p.saveData()
         self.dismissController()
     }
 

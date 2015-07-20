@@ -194,21 +194,21 @@ class MainController: WKInterfaceController
     // PooWatch tick, update labels
     func pooTick(elapsedTime: NSTimeInterval, elapsedTimeString: String)
     {
-        let grossProfit = self.calculateGrossProfit(elapsedTime)
-        let grossProfitString = c4p.numberFormatter.stringFromNumber(grossProfit!)!
+        let grossProfit:Double = self.calculateGrossProfit(elapsedTime)
+        let grossProfitString = self.c4p.getGrossProfitString("\(grossProfit)")
 
         self.lblStopwatch.setText(elapsedTimeString)
         self.lblGrossProfit.setText(grossProfitString)
 
         self.session = [
             "elapsedTime": "\(elapsedTime)",
-            "grossProfit": "\(grossProfit!)",
+            "grossProfit": "\(grossProfit)",
             "startTime"  : "\(self.pooWatch!.startTime)",
             "stopTime"   : "\(NSDate().timeIntervalSince1970)"
         ]
     }
 
-    func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double?
+    func calculateGrossProfit(elapsedTime: NSTimeInterval) -> Double
     {
         if let annualSalary = self.c4p.annualSalary,
             let workHours = self.c4p.workHours
@@ -219,7 +219,7 @@ class MainController: WKInterfaceController
             return currentGrossProfit
         }
 
-        return nil
+        return 0
     }
 
 

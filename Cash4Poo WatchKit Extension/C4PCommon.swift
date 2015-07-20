@@ -64,7 +64,7 @@ class C4PCommon
     }
 
 
-    private func stringToDouble(input: String) -> Double
+    func stringToDouble(input: String) -> Double
     {
         return (input as NSString).doubleValue
     }

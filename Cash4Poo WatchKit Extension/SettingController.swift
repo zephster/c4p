@@ -100,9 +100,11 @@ class SettingController: WKInterfaceController
             switch self.settingType!
             {
                 case "annualSalary":
-                    self.c4p.defaultFormatters()
-                    self.c4p.numberFormatter.maximumFractionDigits = 0
+                    // bug: re-setting numberFormatter settings doesn't work
+                    // so after this is run, it will forever be 0
+                    // self.c4p.numberFormatter.maximumFractionDigits = 0
                     labelText = self.c4p.numberFormatter.stringFromNumber(self.inputValue)
+                    // self.c4p.defaultFormatters()
                 case "workHours":
                     fallthrough // basically, use default
                 default:

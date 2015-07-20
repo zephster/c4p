@@ -12,9 +12,9 @@ class PooWatch : NSObject
 {
     private var timer: NSTimer?
     private var startTime: NSTimeInterval!
-    private var ticker: (NSTimeInterval, String) -> Void
+    private var ticker: (NSTimeInterval) -> Void
 
-    init(tickFunction tick: (NSTimeInterval, String) -> Void)
+    init(tickFunction tick: (NSTimeInterval) -> Void)
     {
         self.ticker = tick;
     }
@@ -80,7 +80,7 @@ class PooWatch : NSObject
 
     func pooTick()
     {
-        self.ticker(self.elapsedTime, self.elapsedTimeString)
+        self.ticker(self.elapsedTime)
     }
 
     deinit
@@ -192,13 +192,14 @@ class MainController: WKInterfaceController
 
 
     // PooWatch tick, update labels
-    func pooTick(elapsedTime: NSTimeInterval, elapsedTimeString: String)
+    func pooTick(elapsedTime: NSTimeInterval)
     {
         let grossProfit:Double = self.calculateGrossProfit(elapsedTime)
         let grossProfitString = self.c4p.getGrossProfitString("\(grossProfit)")
+        let currentTimeString = self.c4p.getTimeString("\(elapsedTime)")
 
-        self.lblStopwatch.setText(elapsedTimeString)
         self.lblGrossProfit.setText(grossProfitString)
+        self.lblStopwatch.setText(currentTimeString)
 
         self.session = [
             "elapsedTime": "\(elapsedTime)",
@@ -219,7 +220,7 @@ class MainController: WKInterfaceController
             return currentGrossProfit
         }
 
-        return 0
+        return 0.00
     }
 
 

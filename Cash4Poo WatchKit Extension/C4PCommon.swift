@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 cbcoding. All rights reserved.
 //
 
-import WatchKit
+import Foundation
 
 class C4PCommon
 {
@@ -46,6 +46,27 @@ class C4PCommon
         self.userData?.setObject(self.workHours, forKey: "workHours")
         self.userData?.setObject(self.pooHistory, forKey: "history")
         self.userData?.synchronize()
+    }
+
+
+    func getGrossProfitString(profit: String) -> String
+    {
+        let grossProfit = self.stringToDouble(profit)
+        return self.numberFormatter.stringFromNumber(grossProfit)!
+    }
+
+    func getTimeString(time: String) -> String
+    {
+        let timeInterval = self.stringToDouble(time)
+        let timeDate = NSDate(timeIntervalSince1970: timeInterval)
+
+        return self.dateFormatter.stringFromDate(timeDate)
+    }
+
+
+    private func stringToDouble(input: String) -> Double
+    {
+        return (input as NSString).doubleValue
     }
 
     private init()

@@ -13,51 +13,26 @@ class HistoryController: WKInterfaceController
     @IBOutlet weak var grpNoHistory: WKInterfaceGroup!
     @IBOutlet weak var tblHistory: WKInterfaceTable!
 
-    var pooHistory: [[String:String]]?
-    var userData: NSUserDefaults?
-    let df = NSDateFormatter()
-    let nf = NSNumberFormatter()
+    let c4p = C4PCommon.sharedInstance
 
 
     // seguing to details view from tapped history row
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
-        println("segueing")
-        println(rowIndex)
-
         if (segueIdentifier == "historyDetailSegue")
         {
-            println("seguing to historyDetailSegue with self.pooHistory")
-
-            // the dumbest way to do something, ever
-            for (index, poo) in enumerate(self.pooHistory!)
-            {
-                if index == rowIndex
-                {
-                    return poo
-                }
-            }
+            return rowIndex
         }
 
         return nil
     }
 
 
-    // todo: replace this with data from main controller
     override func willActivate()
     {
-        self.userData = NSUserDefaults(suiteName: "group.cash4poo")
-
-        if let history = self.userData?.arrayForKey("history") as? [[String:String]]
+        if let history = self.c4p.pooHistory
         {
-            self.pooHistory = history
             self.grpNoHistory.setHidden(true)
-
-            self.df.dateFormat = "mm:ss"
-
-            self.nf.numberStyle = .CurrencyStyle
-            self.nf.maximumFractionDigits = 2
-
             self.populatePooHistory()
         }
         else
@@ -69,21 +44,28 @@ class HistoryController: WKInterfaceController
 
     func populatePooHistory()
     {
-        self.tblHistory.setNumberOfRows(self.pooHistory!.count, withRowType: "PooHistoryTableRowController")
-
-        for (index, poo) in enumerate(self.pooHistory!)
+        if let pooHistory = self.c4p.pooHistory
         {
-            let row = self.tblHistory.rowControllerAtIndex(index) as! PooHistoryTableRowController
+            self.c4p.defaultFormatters()
 
-            // money string
-            let grossProfit:Double = (poo["grossProfit"]! as NSString).doubleValue
+            self.tblHistory.setNumberOfRows(pooHistory.count, withRowType: "PooHistoryTableRowController")
 
-            // elapsed time string
-            let pooTime = NSDate(timeIntervalSince1970: (poo["elapsedTime"]! as NSString).doubleValue)
-            let pooTimeString = self.df.stringFromDate(pooTime)
+            for (index, poo) in enumerate(pooHistory)
+            {
+                let row = self.tblHistory.rowControllerAtIndex(index) as! PooHistoryTableRowController
 
-            row.lblGrossProfit.setText(self.nf.stringFromNumber(grossProfit))
-            row.lblTime.setText(pooTimeString)
+                if let grossProfit = poo["grossProfit"]
+                {
+                    let grossProfitString = self.c4p.getGrossProfitString(grossProfit)
+                    row.lblGrossProfit.setText(grossProfitString)
+                }
+
+                if let elapsedTime = poo["elapsedTime"]
+                {
+                    let elapsedTimeString = self.c4p.getTimeString(elapsedTime)
+                    row.lblTime.setText(elapsedTimeString)
+                }
+            }
         }
     }
 }

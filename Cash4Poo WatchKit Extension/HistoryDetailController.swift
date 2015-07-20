@@ -19,56 +19,69 @@ class HistoryDetailController: WKInterfaceController
 
 
     var pooData: [String:String]?
-    let nf = NSNumberFormatter()
-    let df = NSDateFormatter()
+    let c4p = C4PCommon.sharedInstance
 
 
     override func awakeWithContext(context: AnyObject?)
     {
         super.awakeWithContext(context)
-        self.pooData = context! as? [String : String]
 
-        self.nf.numberStyle = .CurrencyStyle
-        self.nf.maximumFractionDigits = 2
+        var index = context as! Int
 
-        self.df.timeZone = NSTimeZone(name: "UTC")
-        self.df.dateFormat = "HH:mm:ss"
+        if let pooHistory = self.c4p.pooHistory
+        {
+            for (i, poo) in enumerate(pooHistory)
+            {
+                if index == i
+                {
+                    self.pooData = poo
+                    break;
+                }
+            }
 
-        self.populateData()
+            self.populateData()
+        }
     }
 
 
     func populateData()
     {
-        // profit
-        let grossProfit:Double = (self.pooData!["grossProfit"]! as NSString).doubleValue
-        self.lblProfit.setText(self.nf.stringFromNumber(grossProfit))
+        if let pooData = self.pooData
+        {
+            // default formatters
+            self.c4p.defaultFormatters()
 
-        // elapsed time
-        let elapsedTime = NSDate(timeIntervalSince1970: (self.pooData!["elapsedTime"]! as NSString).doubleValue)
-        self.lblTime.setText(self.df.stringFromDate(elapsedTime))
+            if let grossProfit = pooData["grossProfit"]
+            {
+                self.lblProfit.setText(self.c4p.getGrossProfitString(grossProfit))
+            }
 
+            if let elapsedTime = pooData["elapsedTime"]
+            {
+                self.lblTime.setText(self.c4p.getTimeString(elapsedTime))
+            }
 
-        // todo: have an option to use 12 or 24hr time
-        // will be easier once i get all my common code together.
-        // the reason i do this after elapsedTime is because it would adjust
-        // elapsedTimes hours (from the timezone change).
-        // start and stop time depend on setting the timezone to local time
-        self.df.timeZone = NSTimeZone.localTimeZone()
-        self.df.dateFormat = "hh:mm:ss a"
+            // todo: have an option to use 12 or 24hr time
+            // the reason i do this after elapsedTime is because it would adjust
+            // elapsedTimes hours (from the timezone change).
+            // start and stop time depend on setting the timezone to local time
+            self.c4p.dateFormatter.timeZone = NSTimeZone.localTimeZone()
+            self.c4p.dateFormatter.dateFormat = "hh:mm:ss a"
 
+            if let stopTime = pooData["stopTime"]
+            {
+                self.lblStop.setText(self.c4p.getTimeString(stopTime))
+            }
 
-        // stop time
-        let stopTime = NSDate(timeIntervalSince1970: (self.pooData!["stopTime"]! as NSString).doubleValue)
-        self.lblStop.setText(self.df.stringFromDate(stopTime))
+            if let startTime = pooData["startTime"]
+            {
+                self.lblStart.setText(self.c4p.getTimeString(startTime))
 
-        // start time
-        let startTime = NSDate(timeIntervalSince1970: (self.pooData!["startTime"]! as NSString).doubleValue)
-        self.lblStart.setText(self.df.stringFromDate(startTime))
-
-        // change dateFormat to get day(man) stuff, for date label
-        self.df.dateFormat = "MMM dd, YYYY"
-        self.lblDate.setText(self.df.stringFromDate(startTime))
-
+                // change dateFormat to get day(man) info for date label
+                // just re-use startTime cause i'm getting different data from it
+                self.c4p.dateFormatter.dateFormat = "MMM dd, YYYY"
+                self.lblDate.setText(self.c4p.getTimeString(startTime))
+            }
+        }
     }
 }

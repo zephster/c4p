@@ -79,7 +79,7 @@
 /* Begin PBXFileReference section */
 		CA066DEA1B574160001753D3 /* HistoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailController.swift; sourceTree = "<group>"; };
 		CA257EF51B47266500376B73 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PooHistoryTableRowController.swift; path = "../Cash4Poo WatchKit App/PooHistoryTableRowController.swift"; sourceTree = "<group>"; };
+		CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PooHistoryTableRowController.swift; sourceTree = "<group>"; };
 		CA3C85801B55F42700C51782 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		CA7D16021B44D3FD0066B4D1 /* Cash4Poo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cash4Poo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7D16061B44D3FD0066B4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -201,7 +201,6 @@
 				CAEDE5771B44DC9900682F0B /* GlanceController.swift */,
 				CA3C85801B55F42700C51782 /* HistoryController.swift */,
 				CA066DEA1B574160001753D3 /* HistoryDetailController.swift */,
-				CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */,
 				CAEDE5791B44DC9900682F0B /* Images.xcassets */,
 				CAEDE5731B44DC9900682F0B /* Supporting Files */,
 			);
@@ -219,6 +218,7 @@
 		CAEDE5811B44DC9A00682F0B /* Cash4Poo WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				CA3C857C1B55F22600C51782 /* PooHistoryTableRowController.swift */,
 				CAEDE5841B44DC9A00682F0B /* Interface.storyboard */,
 				CAEDE5871B44DC9A00682F0B /* Images.xcassets */,
 				CAEDE5821B44DC9A00682F0B /* Supporting Files */,

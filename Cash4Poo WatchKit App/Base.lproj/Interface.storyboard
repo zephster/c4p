@@ -338,6 +338,9 @@
                                         <button width="1" alignment="left" title="Delete" id="8d3-5I-CWv">
                                             <color key="backgroundColor" red="0.36078431372549019" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="font" type="system" pointSize="20"/>
+                                            <connections>
+                                                <action selector="deleteButtonTapped" destination="atn-9g-ZSE" id="zu1-8f-gSF"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>

@@ -19,6 +19,7 @@ class HistoryDetailController: WKInterfaceController
 
 
     var pooData: [String:String]?
+    var index:Int?
     let c4p = C4PCommon.sharedInstance
 
 
@@ -26,13 +27,13 @@ class HistoryDetailController: WKInterfaceController
     {
         super.awakeWithContext(context)
 
-        var index = context as! Int
+        self.index = context as? Int
 
         if let pooHistory = self.c4p.pooHistory
         {
             for (i, poo) in enumerate(pooHistory)
             {
-                if index == i
+                if self.index == i
                 {
                     self.pooData = poo
                     break;
@@ -83,5 +84,21 @@ class HistoryDetailController: WKInterfaceController
                 self.lblDate.setText(self.c4p.getTimeString(startTime))
             }
         }
+    }
+
+    func deletePoo()
+    {
+        if let index = self.index
+        {
+            self.c4p.pooHistory?.removeAtIndex(index)
+            self.c4p.saveData()
+            self.dismissController()
+        }
+    }
+
+
+
+    @IBAction func deleteButtonTapped() {
+        self.deletePoo()
     }
 }

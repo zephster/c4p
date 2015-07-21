@@ -146,6 +146,12 @@ class MainController: WKInterfaceController
             self.pooWatch = PooWatch(tickFunction: self.pooTick)
         }
 
+        if (self.stopShouldReset == true)
+        {
+            self.stopShouldReset = false
+            self.btnStop.setTitle("Stop")
+        }
+
         self.pooWatch!.start()
     }
 

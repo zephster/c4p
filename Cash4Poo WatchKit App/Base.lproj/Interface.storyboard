@@ -364,18 +364,19 @@
             <objects>
                 <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="Cash4Poo_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="gv7-I2-MZq">
-                            <items>
-                                <label alignment="center" verticalAlignment="center" text="You have made" textAlignment="center" id="4gg-CD-efp"/>
-                            </items>
-                        </group>
+                        <group alignment="left" id="gv7-I2-MZq"/>
                         <group alignment="left" layout="vertical" id="eew-Gs-W6Y">
                             <items>
-                                <label alignment="left" text="$13.37" id="sWW-Dy-kQd">
-                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <label width="1" alignment="left" text="💰4💩" textAlignment="center" id="jyH-1i-mpK">
+                                    <fontDescription key="font" type="system" pointSize="38"/>
                                 </label>
-                                <label alignment="left" text="Making poopy." id="Zx9-cY-tRd"/>
-                                <label alignment="left" text="AWESOME!" id="0pG-O8-mZv"/>
+                                <label width="1" alignment="left" text="+$13.37" textAlignment="center" id="sWW-Dy-kQd">
+                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="30"/>
+                                </label>
+                                <label width="1" alignment="left" text="(niceeee)" textAlignment="center" id="WvO-Zb-TaI">
+                                    <fontDescription key="font" type="system" pointSize="8"/>
+                                </label>
                             </items>
                         </group>
                     </items>

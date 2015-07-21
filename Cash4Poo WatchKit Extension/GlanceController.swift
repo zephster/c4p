@@ -33,7 +33,7 @@ class GlanceController: WKInterfaceController
                 }
             }
 
-            self.lblTotalProfit.setText(self.c4p.getGrossProfitString("\(totalProfit)"))
+            self.lblTotalProfit.setText("+ " + self.c4p.getGrossProfitString("\(totalProfit)"))
         }
     }
 

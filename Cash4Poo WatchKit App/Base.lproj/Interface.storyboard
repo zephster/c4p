@@ -28,7 +28,7 @@
                                 <group width="1" height="0.75" alignment="left" layout="vertical" id="DrQ-NK-irI" userLabel="Info">
                                     <items>
                                         <label alignment="left" text="Elapsed Time" id="fpx-Ld-IGY"/>
-                                        <label alignment="center" text="0:00:00" id="JhJ-Ki-msq">
+                                        <label alignment="center" text="00:00:00" id="JhJ-Ki-msq">
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label alignment="left" text="Gross (lol) Profit" id="3Mn-bx-Vpc"/>
